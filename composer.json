@@ -2,7 +2,7 @@
   "name": "bbn/appui-dashboard",
   "description": "Dashboards and widgets management for appui",
   "keywords": ["dashboard","widget","php","appui"],
-  "homepage": "https://github.com/nabab/appui-cron",
+  "homepage": "https://github.com/nabab/appui-dashboard",
   "license": "MIT",
   "authors": [
     {
