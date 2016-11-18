@@ -19,7 +19,7 @@ foreach ( $widgets as $id => $code ){
       $wid['limit'] = $o['limit'];
     }
     array_push($r['widgets'], $wid);
-    $cn = 'widgets/'.$code;
+    $cn = './widgets/'.$code;
     if ( !in_array($code, $no_cache) ){
       $r['data'][$code] = [
         'items' => $model->get_cached_model($cn, $wid)
