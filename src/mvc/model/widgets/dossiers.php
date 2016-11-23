@@ -7,7 +7,7 @@ return array_map(function($a){
 }, $model->db->get_rows("
   SELECT apst_adherents.id, nom, statut, 
   title, bbn_options.code AS status, MIN(priority) AS priority, MIN(deadline) AS deadline,
-  FROM_UNIXTIME(MAX(bbn_tasks_logs.chrono)) AS last_activity,
+  FROM_UNIXTIME(MAX(bbn_tasks_logs.chrono), '%Y-%m-%d %H:%i:%s') AS last_activity,
   id_adherent
   FROM bbn_tasks
     JOIN bbn_tasks_roles

@@ -10,25 +10,20 @@ $no_cache = ['consultations', 'bugs', 'stats', 'users', 'dossiers'];
 foreach ( $widgets as $id => $code ){
   if ( $model->inc->pref->has_permission($id) ){
     $o = $model->inc->options->option($id);
-    $wid = [
+    $cn = './widgets/'.$code;
+    $r['data'][$code] = [
       'text' => $o['text'],
       'link' => $code,
-      'template' => !empty($o['template']) ? $o['template'] : 'adh'
+      'template' => !empty($o['template']) ? $o['template'] : 'adh',
     ];
     if ( !empty($o['limit']) ){
-      $wid['limit'] = $o['limit'];
+      $r['data'][$code]['limit'] = $o['limit'];
     }
-    array_push($r['widgets'], $wid);
-    $cn = './widgets/'.$code;
     if ( !in_array($code, $no_cache) ){
-      $r['data'][$code] = [
-        'items' => $model->get_cached_model($cn, $wid)
-      ];
+      $r['data'][$code]['items'] = $model->get_cached_model($cn, $wid);
     }
     else{
-      $r['data'][$code] = [
-        'items' => $model->get_model($cn, $wid)
-      ];
+      $r['data'][$code]['items'] = $model->get_model($cn, $wid);
     }
     if ( !is_array($r['data'][$code]['items']) ){
       $r['data'][$code] = ['items' => []];

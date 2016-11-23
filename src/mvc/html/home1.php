@@ -7,6 +7,8 @@
   </div>
   {{/widgets}}
 </div>
+
+
 <script id="home_widget_tpl" type="text/x-kendo-template">
   <div class="k-block appui-widget">
     <div class="k-header">#= title #</div>

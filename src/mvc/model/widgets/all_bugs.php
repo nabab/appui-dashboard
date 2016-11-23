@@ -6,7 +6,7 @@ return array_map(function($a){
   return $a;
 }, $model->db->get_rows("
   SELECT bbn_tasks.id, title, bbn_options.code AS status,
-  FROM_UNIXTIME(MAX(bbn_tasks_logs.chrono)) AS last_activity
+  FROM_UNIXTIME(MAX(bbn_tasks_logs.chrono), '%Y-%m-%d %H:%i:%s') AS last_activity
   FROM bbn_tasks
     JOIN bbn_tasks_logs
       ON bbn_tasks.id = bbn_tasks_logs.id_task
