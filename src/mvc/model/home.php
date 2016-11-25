@@ -19,10 +19,10 @@ foreach ( $widgets as $id => $code ){
     $r['data'][$code]['limit'] = $o['limit'];
   }
   if ( !in_array($code, $no_cache) ){
-    $r['data'][$code]['items'] = $model->get_cached_model($cn, $wid);
+    $r['data'][$code]['items'] = $model->get_cached_model($cn, $id);
   }
   else{
-    $r['data'][$code]['items'] = $model->get_model($cn, $wid);
+    $r['data'][$code]['items'] = $model->get_model($cn, $id);
   }
   if ( !is_array($r['data'][$code]['items']) ){
     $r['data'][$code] = ['items' => []];
