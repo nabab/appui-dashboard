@@ -1,7 +1,7 @@
 <div class="appui-h-100 appui-w-100 appui-block">
   <div class="appui-dashboard appui-masonry appui-margin" id="dashboard">
     <div :class="'k-block appui-widget ' + index" v-for="(w, index) in widgets" v-if="w.text && w.num">
-      <div class="k-header" v-html="w.text"></div>
+      <div class="k-header" v-html="'<h4>' + w.text + '</h4>'"></div>
 
       <ul v-if="w.template === 'msg'">
         <li v-for="item in w.items" >
