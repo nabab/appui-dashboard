@@ -109,8 +109,8 @@
 
       <ul v-if="w.template === 'pdt'">
         <li v-for="item in w.items" class="appui-c">
-          <div class="ui tiny horizontal purple statistic">
-            <div class="value" v-html="money(item.val)">
+          <div class="appui-stats">
+            <div class="value appui-purple" v-html="money(item.val)">
             </div>
             <div class="label">
               {{item.titre}}
