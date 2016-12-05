@@ -1,6 +1,6 @@
 <div class="appui-h-100 appui-w-100 appui-block">
   <div class="appui-dashboard appui-masonry appui-margin" id="dashboard">
-    <div :class="'k-block appui-widget ' + index" v-for="(w, index) in widgets" v-if="w.text && w.num">
+    <div :class="'k-block appui-widget appui-widget-' + index" v-for="(w, index) in widgets" v-if="w.text && w.num">
       <div class="k-header" v-html="'<h4>' + w.text + '</h4>'"></div>
 
       <ul v-if="w.template === 'msg'">
@@ -186,6 +186,25 @@
     </div>
   </div>
 </div>
+<script type="text/html" id="appui-dashboard-new-note-tpl">
+  <form id="iasjdiahoi3248asdho" action="notes/actions/insert" style="display:none">
+    <input class="k-textbox" name="title" placeholder="Titre" style="width: 100%">
+    <textarea name="content" style="width: 100%"></textarea>
+    <div class="appui-c appui-lg">
+      <input id="appui-note-checkbox-private" class="k-checkbox" name="private" value="1" type="checkbox">
+      <label class="k-checkbox-label" for="appui-note-checkbox-private" style="margin-right: 2em">
+        <i class="fa fa-eye-slash"> </i>
+      </label>
+      <input id="appui-note-checkbox-locked" class="k-checkbox" name="locked" value="1" type="checkbox">
+      <label class="k-checkbox-label" for="appui-note-checkbox-locked" style="margin-right: 2em">
+        <i class="fa fa-lock"> </i>
+        </label>
+      <button class="k-button" type="button" style="margin-right:0.5em"><i class="fa fa-close"></i> Annuler</button>
+      <button class="k-button" type="submit"><i class="fa fa-send"></i> Ajouter</button>
+      </div>
+    </form>
+
+</script>
 <!--
 
 <script id="home_modifs_tpl" type="text/x-kendo-template">
