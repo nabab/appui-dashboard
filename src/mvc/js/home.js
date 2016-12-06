@@ -89,68 +89,71 @@ appui.dashboard = new Vue({
     money: function(val) {
       return val.toString().match(/^[-+]?[0-9]+\.[0-9]+$/) ? appui.fn.money(Math.round(val / 1000)) + " k&euro;" : appui.fn.money(val);
     },
-  },
-  mounted : function(){
-    var v = this;
-    appui.fn.analyzeContent($(v.$el));
-    appui.fn.addToggler($(v.$el));
-    var $msgCont = $(".appui-widget-news", v.$el)
-          .closest("div.k-block.appui-widget"),
-        $msgContHeader = $("div.k-header", $msgCont),
-        msgNew = $("#appui-dashboard-new-note-tpl").html();
-    $msgContHeader.prepend(
-      $('<div/>').append(
-        $('<i class="fa fa-sticky-note-o appui-p" title="Nouvelle note"></i>').click(function(){
-          var $msgNew = $("#iasjdiahoi3248asdho", $msgCont);
-          if ( !$("#iasjdiahoi3248asdho", $msgCont).length ){
-            $msgCont.append(msgNew);
-            $msgNew = $("#iasjdiahoi3248asdho", $msgCont).show();
-            $("textarea", $msgNew).kendoEditor({
-              tools: [
-                "bold",
-                "italic",
-                "underline",
-                "insertUnorderedList",
-                "insertOrderedList"
-              ]
-            });
-            appui.fn.cssMason(v.$el);
-            $msgNew.animateCss("bounceIn", function(){
-              appui.fn.cssMason(v.$el);
-            });
-            $("i.fa-close", $msgNew).parent().on('click', function(){
-              $("textarea", $msgNew).data("kendoEditor").destroy();
-              $msgNew.animateCss("bounceOut", function(){
-                $msgNew.remove();
-                setTimeout(function(){
-                  appui.fn.cssMason(v.$el);
-                }, 50);
-              })
-            });
-            $("input[name=title]", $msgCont).focus();
-            $msgNew.data("script", function(d){
-              if ( d.success ){
-                $msgNew.animateCss("bounceOut", function(){
-                  $msgNew.remove();
-                  setTimeout(function(){
-                    appui.fn.cssMason(v.$el);
-                  }, 50);
-                })
-                appui.app.notification.success("Note cr&eacute;&eacute;e!");
-              }
-              else{
-                appui.fn.alert();
-              }
-            })
+    getNoteContainer: function(){
+      return $(".appui-widget-news", this.$el);
+    },
+    getNoteTemplate: function(){
+      return $("#appui-dashboard-new-note-tpl", ele).html();
+    },
+    toggleNote: function(){
+      var v = this,
+          $c = v.getNoteContainer(),
+          tpl = v.getNoteTemplate(),
+          $note = $("#iasjdiahoi3248asdho", $c);
+      $c.css("height", "auto");
+      if ( !$note.length ) {
+        $c.children(".appui-widget-content").append(tpl);
+        $note = $("#iasjdiahoi3248asdho", $c).show();
+        $("textarea", $note).kendoEditor({
+          tools: [
+            "bold",
+            "italic",
+            "underline",
+            "insertUnorderedList",
+            "insertOrderedList"
+          ]
+        });
+        $c.css("height", "auto");
+        appui.fn.cssMason(v.$el);
+        $("i.fa-close", $note).parent().on('click', function(){
+          v.toggleNote();
+        });
+        $("input[name=title]", $c).focus();
+        $note.data("script", function(d){
+          if ( d.success ){
+            v.toggleNote();
+            appui.app.notification.success("Note cr&eacute;&eacute;e!");
           }
           else{
-            $msgNew.animateCss("bounceOut", function(){
-              $msgNew.remove();
-              setTimeout(function(){
-                appui.fn.cssMason(v.$el);
-              }, 50);
-            })
+            appui.fn.alert();
           }
+        }).animateCss("bounceIn", function () {
+          appui.fn.cssMason(v.$el);
+        });
+      }
+      else{
+        $note.animateCss("bounceOut", function(){
+          $("textarea", $note).data("kendoEditor").destroy();
+          $note.remove();
+          $c.css("height", "auto");
+          setTimeout(function(){
+            appui.fn.cssMason(v.$el);
+          }, 50);
+        })
+      }
+    },
+  },
+  mounted : function(){
+    var v = this,
+        $c = this.getNoteContainer(),
+        $h = $("div.k-header", $c),
+        tpl = $("#appui-dashboard-new-note-tpl", $c).html();
+    appui.fn.analyzeContent($(v.$el));
+    appui.fn.addToggler($(v.$el));
+    $h.append(
+      $('<div/>').append(
+        $('<i class="fa fa-sticky-note-o appui-p" title="Nouvelle note" tabindex="0"></i>').click(function(){
+          v.toggleNote();
         })
       )
     );
