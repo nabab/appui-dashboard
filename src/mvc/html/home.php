@@ -7,7 +7,7 @@
         <ul v-if="w.template === 'msg'">
           <li v-for="item in w.items" >
         <span>
-          <a href="javascript:;" v-text="item.titre" :onclick="'appui.fn.window(\'message\', {id: ' + item.id + '})'">
+          <a href="javascript:;" v-text="item.titre" :onclick="'bbn.fn.window(\'message\', {id: ' + item.id + '})'">
           </a>
         </span>
             <span><em v-text="show_auteur(item.auteur)"></em></span>
@@ -102,7 +102,7 @@
 
       <!--div v-if="w.template === 'stats'">
         <div data-role="chart"
-             data-bind="source: appui.dashboard.widgets.stats.items.data"
+             data-bind="source: bbn.dashboard.widgets.stats.items.data"
              :data-theme="theme"
              data-legend="{position: 'bottom'}"
              data-series-defaults="{type: 'line'}"
@@ -124,7 +124,7 @@
         <div class="dropdownstats">
           <input id="As9275dK2D45gm2C0JSS033sd"
                  data-role="dropdownlist"
-                 data-bind="source: appui.dashboard.widgets.stats.items.charts, value: appui.dashboard.widgets.stats.items.value"
+                 data-bind="source: bbn.dashboard.widgets.stats.items.charts, value: bbn.dashboard.widgets.stats.items.value"
                  data-text-field="text"
                  data-value-field="value"
                  style="width: 100%; float: none; clear: none; margin-left: 5px;"

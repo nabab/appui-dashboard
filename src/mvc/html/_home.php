@@ -18,7 +18,7 @@
 <script id="home_msg_tpl" type="text/x-kendo-template">
   <li>
   <span>
-    <a href="javascript:;" onclick="appui.fn.window('message', {id: #: id # });">
+    <a href="javascript:;" onclick="bbn.fn.window('message', {id: #: id # });">
       #: titre #
     </a>
   </span>
@@ -47,7 +47,7 @@
 <script id="home_modifs_tpl" type="text/x-kendo-template">
   <li>
     <span><a href="adherent/fiche/#: id #" class="#: statut #">#: nom #</a></span>
-    <span><em>par #: appui.app.apst.users[appui.fn.search(appui.app.apst.users, "value", id_user)].text #</em></span>
+    <span><em>par #: bbn.app.apst.users[bbn.fn.search(bbn.app.apst.users, "value", id_user)].text #</em></span>
   </li>
 </script>
 
@@ -56,7 +56,7 @@
   # for ( var i = 0; i < data.revisions.length; i++ ){
   # <li>
     <span><a href="https://svn.apst.travel/revision.php?repname=app&rev=#: data.revisions[i].revision #" target="_blank">Rev. #: data.revisions[i].revision #</a></span>
-    <span>#= appui.fn.fdate(data.revisions[i].date_rev) # par #: data.revisions[i].author #</span><br>
+    <span>#= bbn.fn.fdate(data.revisions[i].date_rev) # par #: data.revisions[i].author #</span><br>
     #= data.revisions[i].info #
   </li>#
   } #
@@ -73,7 +73,7 @@
   <li class="appui-c">
     <div class="ui tiny horizontal purple statistic">
       <div class="value">
-        # val = val.toString().match(/^[-+]?[0-9]+\.[0-9]+$/) ? appui.fn.money(Math.round(val/1000)) + " k&euro;" : appui.fn.money(val); # #= val #
+        # val = val.toString().match(/^[-+]?[0-9]+\.[0-9]+$/) ? bbn.fn.money(Math.round(val/1000)) + " k&euro;" : bbn.fn.money(val); # #= val #
       </div>
       <div class="label">
         #: titre #
@@ -96,7 +96,7 @@
   <span class="#: bugclass #" title="#: status #">
     <a href="pm/panel/tasks/#: id #">#= title ? title : 'Sans titre' #</a>
   </span>
-    <span>#= appui.fn.fdate(last_activity) #</span>
+    <span>#= bbn.fn.fdate(last_activity) #</span>
   </li>
 </script>
 
@@ -105,7 +105,7 @@
   <span>
     <a href="adherent/fiche/#: id #/tasks" class="adherent">#: nom #</a>
   </span>
-    <span>#= appui.fn.fdate(deadline) #</span>
+    <span>#= bbn.fn.fdate(deadline) #</span>
   </li>
 </script>
 
@@ -113,7 +113,7 @@
   <li>
     <div data-role="chart"
          data-bind="source: data"
-         data-theme="#: appui.app.theme #"
+         data-theme="#: bbn.app.theme #"
          data-legend="{position: 'bottom'}"
          data-series-defaults="{type: 'line'}"
          data-series="[{field: 'val'}]"
