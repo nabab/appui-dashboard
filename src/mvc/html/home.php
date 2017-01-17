@@ -1,4 +1,4 @@
-<div class="appui-h-100 appui-w-100 appui-block">
+<div class="appui-h-100 appui-w-100 appui-content">
   <div class="appui-dashboard appui-masonry appui-margin" id="dashboard">
     <div :class="'k-block appui-widget appui-widget-' + index" v-for="(w, index) in widgets" v-if="w.text && w.num" data-handle=".appui-widget-header">
       <div class="k-header appui-widget-header" v-html="'<h4>' + w.text + '</h4>'"></div>
