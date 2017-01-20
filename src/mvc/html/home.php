@@ -41,7 +41,7 @@
             <ul v-for="obj in item.revisions">
               <li>
                 <a :href="'https://svn.apst.travel/revision.php?repname=app&rev='+ obj.revision" target="_blank">Rev. {{obj.revision}}</a>
-                <span v-text="showDateAuthor('svn', obj.date_rev, obj.author)"></span>
+                <div class="appui-iblock" v-text="showDateAuthor('svn', obj.date_rev, obj.author)"></div>
               </li>
               <li>
                 <span v-html="obj.info"></span>
