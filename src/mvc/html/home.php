@@ -22,11 +22,11 @@
 
         <ul v-else-if="w.template === 'notes'">
           <li v-for="item in w.items" >
-            <div v-html="userFull(item.id_user)"></div>
-            <br>
-            <a :href="'adherent/fiche/'+ item.id + '/notes'" :style="get_couleur(item)" v-text="item.nom"></a>
-            <br>
-            <span v-text="item.texte"></span>
+            <div class="appui-w-100 appui-iblock" v-html="userFull(item.id_user)"></div>
+            <div class="appui-w-100">
+              <a :href="'adherent/fiche/'+ item.id + '/notes'" :style="get_couleur(item)" v-text="item.nom"></a>
+            </div>
+            <div class="appui-w-100" v-text="item.texte"></div>
           </li>
         </ul>
 
@@ -40,11 +40,13 @@
             <div class="k-header k-block" v-text="item.title"></div>
             <ul v-for="obj in item.revisions">
               <li>
-                <a :href="'https://svn.apst.travel/revision.php?repname=app&rev='+ obj.revision" target="_blank">Rev. {{obj.revision}}</a>
-                <div class="appui-iblock" v-text="showDateAuthor('svn', obj.date_rev, obj.author)"></div>
+                <div class="appui-block-left">
+                  <a :href="'https://svn.apst.travel/revision.php?repname=app&rev='+ obj.revision" target="_blank">Rev. {{obj.revision}}</a>
+                </div>
+                <div class="appui-block-right appui-r" v-text="showDateAuthor('svn', obj.date_rev, obj.author)"></div>
               </li>
               <li>
-                <span v-html="obj.info"></span>
+                <div class="appui-w-100" v-html="obj.info"></div>
               </li>
             </ul>
           </li>
