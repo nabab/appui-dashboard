@@ -1,11 +1,11 @@
-<div class="appui-h-100 appui-w-100 appui-content">
+<div class="appui-full-content">
   <div class="appui-dashboard appui-masonry appui-margin" id="dashboard">
     <div :class="'k-block appui-widget appui-widget-' + index" v-for="(w, index) in widgets" v-if="w.text && w.num" data-handle=".appui-widget-header">
       <div class="k-header appui-widget-header" v-html="'<h4>' + w.text + '</h4>'"></div>
       <div class="appui-widget-content">
 
         <ul v-if="w.template === 'msg'">
-          <li v-for="item in w.items" >
+          <li v-for="item in w.items">
         <span>
           <a href="javascript:;" v-text="item.titre" :onclick="'bbn.fn.window(\'message\', {id: ' + item.id + '})'">
           </a>
@@ -15,13 +15,13 @@
         </ul>
 
         <ul v-else-if="w.template === 'adh'">
-          <li v-for="item in w.items" >
+          <li v-for="item in w.items">
             <a :href="'adherent/fiche/' + item.id" :style="get_couleur(item)" v-text="item.nom"></a>
           </li>
         </ul>
 
         <ul v-else-if="w.template === 'notes'">
-          <li v-for="item in w.items" >
+          <li v-for="item in w.items">
             <div class="appui-w-100 appui-iblock" v-html="userFull(item.id_user)"></div>
             <div class="appui-w-100">
               <a :href="'adherent/fiche/'+ item.id + '/notes'" :style="get_couleur(item)" v-text="item.nom"></a>

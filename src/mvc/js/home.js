@@ -144,15 +144,15 @@ bbn.dashboard = new Vue({
     },
   },
   mounted : function(){
-    var v = this,
+    var vm = this,
         $c = this.getNoteContainer(),
-        $h = $("div.k-header", $c),
-        tpl = $("#appui-dashboard-new-note-tpl", $c).html();
-    bbn.fn.addToggler($(v.$el));
+        $h = $("div.k-header", $c);
+    bbn.fn.analyzeContent(vm.$el, true);
+    bbn.fn.addToggler($(vm.$el));
     $h.append(
       $('<div/>').append(
         $('<i class="fa fa-sticky-note-o appui-p" title="Nouvelle note" tabindex="0"></i>').click(function(){
-          v.toggleNote();
+          vm.toggleNote();
         })
       )
     );
