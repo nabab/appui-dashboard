@@ -1,6 +1,6 @@
 <?php
 /** @var \bbn\mvc\model $model */
-$widgets = $model->inc->perm->get('home/widgets');
+$widgets = (array)$model->inc->perm->get('home/widgets');
 $r = [
   'widgets' => [],
   'data' => []
@@ -33,4 +33,5 @@ foreach ( $widgets as $id => $code ){
   $r['data'][$code]['num'] = count($r['data'][$code]['items']) ?: false;
   $obs->register($r['data'][$code], $code, 'home');
 }
+//die(var_dump($widgets, $r));
 return $r;

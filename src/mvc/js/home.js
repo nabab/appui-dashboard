@@ -1,6 +1,6 @@
 // Javascript Document
 //bbn.app.tabstrip.ele.tabNav("addData", data, 0);
-bbn.fn.log(data);
+bbn.fn.log("THE DATA", data);
 /*
 var $dashboard = $(".appui-dashboard", ele),
     $msgCont = $("ul[data-template=home_msg_tpl]", "#apst_dashboard", ele)
