@@ -47,7 +47,7 @@
 <script id="home_modifs_tpl" type="text/x-kendo-template">
   <li>
     <span><a href="adherent/fiche/#: id #" class="#: statut #">#: nom #</a></span>
-    <span><em>par #: bbn.app.apst.users[bbn.fn.search(bbn.app.apst.users, "value", id_user)].text #</em></span>
+    <span><em>par #: appui.apst.users[bbn.fn.search(appui.apst.users, "value", id_user)].text #</em></span>
   </li>
 </script>
 
@@ -113,7 +113,7 @@
   <li>
     <div data-role="chart"
          data-bind="source: data"
-         data-theme="#: bbn.app.theme #"
+         data-theme="#: appui.theme #"
          data-legend="{position: 'bottom'}"
          data-series-defaults="{type: 'line'}"
          data-series="[{field: 'val'}]"
