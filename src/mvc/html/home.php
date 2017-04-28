@@ -1,5 +1,5 @@
 <div class="appui-full-content">
-  <bbn-dashboard :source="widgets" :components="components"></bbn-dashboard>
+  <bbn-dashboard :source="widgets"></bbn-dashboard>
 </div>
 
 <script type="text/html" id="appui-dashboard-new-note-tpl">
