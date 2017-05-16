@@ -1,18 +1,18 @@
-<div class="appui-full-content">
+<div class="bbn-full-content">
   <bbn-dashboard :source="widgets"></bbn-dashboard>
 </div>
 
-<script type="text/html" id="appui-dashboard-new-note-tpl">
+<script type="text/html" id="bbn-dashboard-new-note-tpl">
   <form id="iasjdiahoi3248asdho" action="notes/actions/insert" style="display:none">
     <input class="k-textbox" name="title" placeholder="Titre" style="width: 100%">
     <textarea name="content" style="width: 100%"></textarea>
-    <div class="appui-c appui-lg">
-      <input id="appui-note-checkbox-private" class="k-checkbox" name="private" value="1" type="checkbox">
-      <label class="k-checkbox-label" for="appui-note-checkbox-private" style="margin-right: 2em">
+    <div class="bbn-c bbn-lg">
+      <input id="bbn-note-checkbox-private" class="k-checkbox" name="private" value="1" type="checkbox">
+      <label class="k-checkbox-label" for="bbn-note-checkbox-private" style="margin-right: 2em">
         <i class="fa fa-eye-slash"> </i>
       </label>
-      <input id="appui-note-checkbox-locked" class="k-checkbox" name="locked" value="1" type="checkbox">
-      <label class="k-checkbox-label" for="appui-note-checkbox-locked" style="margin-right: 2em">
+      <input id="bbn-note-checkbox-locked" class="k-checkbox" name="locked" value="1" type="checkbox">
+      <label class="k-checkbox-label" for="bbn-note-checkbox-locked" style="margin-right: 2em">
         <i class="fa fa-lock"> </i>
         </label>
       <button class="k-button" type="button" style="margin-right:0.5em"><i class="fa fa-close"></i> Annuler</button>

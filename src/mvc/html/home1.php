@@ -1,18 +1,18 @@
-<div class="appui-dashboard appui-masonry appui-margin">
+<div class="bbn-dashboard bbn-masonry bbn-margin">
 
   {{#widgets}}
-  <div class="k-block appui-widget{{cls}}" data-bind="visible: {{link}}.num">
+  <div class="k-block bbn-widget{{cls}}" data-bind="visible: {{link}}.num">
     <div class="k-header">{{text}}</div>
-    <ul data-appui-type="widget_{{link}}" data-template="home_{{template}}_tpl" data-bind="source: {{link}}.items"></ul>
+    <ul data-bbn-type="widget_{{link}}" data-template="home_{{template}}_tpl" data-bind="source: {{link}}.items"></ul>
   </div>
   {{/widgets}}
 </div>
 
 
 <script id="home_widget_tpl" type="text/x-kendo-template">
-  <div class="k-block appui-widget">
+  <div class="k-block bbn-widget">
     <div class="k-header">#= title #</div>
-    <ul id="appui-widgets_#: name #" data-template="home_#: template #_tpl" data-bind="source: data, visible: num"></ul>
+    <ul id="bbn-widgets_#: name #" data-template="home_#: template #_tpl" data-bind="source: data, visible: num"></ul>
   </div>
 </script>
 <script id="home_msg_tpl" type="text/x-kendo-template">
@@ -70,7 +70,7 @@
 </script>
 
 <script id="home_pdt_tpl" type="text/x-kendo-template">
-  <li class="appui-c">
+  <li class="bbn-c">
     <div class="ui tiny horizontal purple statistic">
       <div class="value">
         # val = val.toString().match(/^[-+]?[0-9]+\.[0-9]+$/) ? bbn.fn.money(Math.round(val/1000)) + " k&euro;" : bbn.fn.money(val); # #= val #
