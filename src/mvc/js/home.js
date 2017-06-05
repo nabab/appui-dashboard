@@ -4,39 +4,46 @@
   return {
     data: function(){
       var vm = this,
-          data = vm.source;
-      data.test1 = {
+          data = vm.source.data;
+      data.push({
         text: "Test with content",
         content: '<h2>This is a test</h2>'
-      };
-      data.test2 = {
+      });
+      data.push({
         text: "Test with simple items",
         items: [
           "Hello",
-          "World"
+          "World",
+          "Hello",
+          "World",
+          "Again",
+          "Hello",
+          "World",
+          "Again"
         ]
-      };
+      });
 
-      for ( var n in data ){
-        data[n].closable = true;
-        data[n].zoomable = true;
-      }
-      data.news.closable = false;
-      data.news.buttonsRight = [{
+      $.each(data, function(i){
+        data[i].closable = true;
+        data[i].zoomable = true;
+      });
+      data[0].closable = false;
+      data[0].buttonsRight = [{
         icon: 'fa fa-sticky-note-o',
         text: bbn._("Nouvelle note"),
         action: 'toggleNote'
       }];
 
-      for ( var n in data ){
-        //data[n].template = 'adh';
+      var widgets = [];
+
+      $.each(data, function(n){
         if ( data[n].template ){
           data[n].component = 'apst-widget-' + (data[n].template ? data[n].template : 'adh');
         }
-      }
+        widgets.push(data[n]);
+      })
       return {
-        widgets: data,
-        theme: appui.theme
+        widgets: widgets
       }
     },
     methods: {
@@ -100,8 +107,11 @@
     mounted: function (){
       var vm = this,
           $c = this.getNoteContainer(),
-          $h = $("div.k-header", $c);
+          $h = $("div.k-header", $c),
+          idx = vm.$parent.idx;
       bbn.fn.analyzeContent(vm.$el, true);
+      //vm.$parent.addToMenu([{text: "Test", click: function(){alert("Hello world")}}]);
+      bbn.fn.log("VUE", vm.$parent.$parent);
     }
   };
 })();
