@@ -11,10 +11,12 @@ foreach ( $widgets as $i => $w ){
   if ( empty($w['template']) ){
     $w['template'] = 'adh';
   }
-  $r['data'][$i] = $w;
-  if ( !empty($o['limit']) ){
-    $r['data'][$i]['limit'] = $o['limit'];
+  if ( !empty($w['code']) ){
+    $w['url'] = $model->plugin_url().'/data/'.$w['code'];
   }
+  $w['key'] = $w['id'];
+  unset($w['id_alias'], $w['code'], $w['num'], $w['num_children'], $w['id'], $w['id_parent']);
+  $r['data'][$i] = $w;
   /*
   $cn = './widgets/'.$w['code'];
   if ( !in_array($code, $no_cache) ){
@@ -23,11 +25,11 @@ foreach ( $widgets as $i => $w ){
   else{
     $r['data'][$code]['items'] = $model->get_model($cn, $id);
   }
-  */
   if ( !is_array(($r['data'][$i]['items'] = $model->get_plugin_model($w['code']))) ){
     $r['data'][$i]['items'] = [];
   }
   $r['data'][$i]['num'] = count($r['data'][$i]['items']) ?: false;
   $obs->register($r['data'][$i], $w['code'], 'home');
+  */
 }
 return ['data' => $r];

@@ -5,6 +5,7 @@
     data: function(){
       var vm = this,
           data = vm.source.data;
+      /*
       data.push({
         text: "Test with content",
         content: '<h2>This is a test</h2>'
@@ -22,13 +23,17 @@
           "Again"
         ]
       });
+      */
 
       $.each(data, function(i){
         data[i].closable = true;
         data[i].zoomable = true;
       });
-      data[0].closable = false;
-      data[0].buttonsRight = [{
+
+      var home = 605128538,
+          idx = bbn.fn.search(data, "key", home);
+      data[idx].closable = false;
+      data[idx].buttonsRight = [{
         icon: 'fa fa-sticky-note-o',
         text: bbn._("Nouvelle note"),
         action: 'toggleNote'
@@ -38,7 +43,7 @@
 
       $.each(data, function(n){
         if ( data[n].template ){
-          data[n].component = 'apst-widget-' + (data[n].template ? data[n].template : 'adh');
+          data[n].itemComponent = 'apst-widget-' + data[n].template;
         }
         widgets.push(data[n]);
       })
@@ -57,6 +62,7 @@
         return $("#bbn-dashboard-new-note-tpl", ele).html();
       },
       toggleNote: function (){
+        alert("test");
         var v     = this,
             $c    = v.getNoteContainer(),
             tpl   = v.getNoteTemplate(),
@@ -112,6 +118,10 @@
       bbn.fn.analyzeContent(vm.$el, true);
       //vm.$parent.addToMenu([{text: "Test", click: function(){alert("Hello world")}}]);
       bbn.fn.log("VUE", vm.$parent.$parent);
+    },
+    updated: function(){
+      var vm = this;
+      bbn.fn.analyzeContent(vm.$el, true);
     }
   };
 })();
