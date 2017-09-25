@@ -1,5 +1,4 @@
 // Javascript Document
-//appui.tabstrip.ele.tabNav("addData", data, 0);
 (function(){
   return {
     data: function(){

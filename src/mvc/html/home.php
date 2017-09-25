@@ -1,1 +1,4 @@
-<bbn-dashboard :source="widgets" url="<?=APPUI_DASHBOARD_ROOT?>actions/"></bbn-dashboard>
+<bbn-dashboard :source="widgets"
+               url="<?=APPUI_DASHBOARD_ROOT?>actions/"
+               :sortable="true"
+></bbn-dashboard>
