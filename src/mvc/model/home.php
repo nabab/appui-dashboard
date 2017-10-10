@@ -1,6 +1,6 @@
 <?php
 /** @var \bbn\mvc\model $model */
-$widgets = (array)$model->inc->perm->get('home/widgets');
+$widgets = (array)$model->inc->perm->get('dashboard/home/widgets');
 $r = [
   'data' => []
 ];
