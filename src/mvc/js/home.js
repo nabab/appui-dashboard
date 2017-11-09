@@ -29,25 +29,19 @@
         data[i].zoomable = true;
       });
 
-      var home = 605128538,
+      var home = vm.source.id_news_widget,
           idx = bbn.fn.search(data, "key", home);
+      if ( idx > -1 ){
       data[idx].closable = false;
       data[idx].buttonsRight = [{
         icon: 'fa fa-sticky-note-o',
         text: bbn._("Nouvelle note"),
         action: 'toggleNote'
       }];
+      }
 
-      var widgets = [];
-
-      $.each(data, function(n){
-        if ( data[n].template ){
-          data[n].itemComponent = 'apst-widget-' + data[n].template;
-        }
-        widgets.push(data[n]);
-      })
       return {
-        widgets: widgets
+        widgets: data
       }
     },
     methods: {
