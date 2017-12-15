@@ -26,18 +26,18 @@
 
       $.each(data, function(i){
         data[i].closable = true;
-        data[i].zoomable = true;
+        //data[i].zoomable = true;
       });
 
       var home = vm.source.id_news_widget,
           idx = bbn.fn.search(data, "key", home);
       if ( idx > -1 ){
-      data[idx].closable = false;
-      data[idx].buttonsRight = [{
-        icon: 'fa fa-sticky-note-o',
-        text: bbn._("Nouvelle note"),
-        action: 'toggleNote'
-      }];
+        data[idx].closable = false;
+        data[idx].buttonsRight = [{
+          icon: 'fa fa-sticky-note-o',
+          text: bbn._("Nouvelle note"),
+          action: 'toggleNote'
+        }];
       }
 
       return {
