@@ -52,10 +52,9 @@
         return $(".bbn-widget-news", this.$el);
       },
       getNoteTemplate: function (){
-        return $("#bbn-dashboard-new-note-tpl", ele).html();
+        return $("#bbn-dashboard-new-note-tpl", this.$el).html();
       },
       toggleNote: function (){
-        alert("test");
         var v     = this,
             $c    = v.getNoteContainer(),
             tpl   = v.getNoteTemplate(),
