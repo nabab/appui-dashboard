@@ -21,7 +21,7 @@ die(\bbn\x::dump(
 
 $r = [];
 $obs = new \bbn\appui\observer($model->db);
-$no_cache = ['consultations', 'bugs', 'stats', 'users', 'dossiers', 'news'];
+$no_cache = ['consultations', 'bugs', 'users', 'dossiers', 'news'];
 $i = 0;
 foreach ( $widgets as $i => $w ){
   if ( empty($w['template']) ){
