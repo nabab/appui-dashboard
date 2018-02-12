@@ -17,7 +17,6 @@ if (
   $res = $ctrl->get_plugin_model($code, $ctrl->post);
   if ( \is_array($res) ){
     $ctrl->obj->success = true;
-    $ctrl->obj->data = [];
     if ( \bbn\x::is_assoc($res) ){
       foreach ($res as $k => $r ){
         $ctrl->obj->$k = $r;
