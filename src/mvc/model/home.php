@@ -1,7 +1,10 @@
 <?php
 /** @var \bbn\mvc\model $model */
-$id_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
-$widgets = (array)$model->inc->perm->get_all($id_widgets);
+$id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
+$widgets_perms = (array)$model->inc->perm->get_all($id_perm_widgets);
+$widgets = array_filter($model->inc->options->full_options('widgets', 'dashboard', 'appui'), function($w) use($widgets_perms){
+  return \bbn\x::find($widgets_perms, ['id' => $w['id_alias']]) !== false;
+});
 /*
 $o = $model->inc->options->options($id_widgets);
 $p = $model->inc->perm->options($id_widgets);
@@ -20,13 +23,10 @@ die(\bbn\x::dump(
 */
 
 $r = [];
-$obs = new \bbn\appui\observer($model->db);
+//$obs = new \bbn\appui\observer($model->db);
 $no_cache = ['consultations', 'bugs', 'users', 'dossiers', 'news'];
 $i = 0;
 foreach ( $widgets as $i => $w ){
-  if ( empty($w['template']) ){
-    $w['template'] = 'adh';
-  }
   if ( !empty($w['code']) ){
     if ( $w['code'] === 'news' ){
       $id_news_widget = $w['id'];
@@ -34,7 +34,8 @@ foreach ( $widgets as $i => $w ){
     $w['url'] = $model->plugin_url().'/data/'.$w['code'];
   }
   $w['key'] = $w['id'];
-  unset($w['id_alias'], $w['code'], $w['num'], $w['num_children'], $w['id'], $w['id_parent']);
+  unset($w['id_alias'], $w['code'], $w['num_children'], $w['id'], $w['id_parent']);
+  //unset($w['id_alias'], $w['code'], $w['num'], $w['num_children'], $w['id'], $w['id_parent']);
   $r[$i] = $w;
   /*
   $cn = './widgets/'.$w['code'];
