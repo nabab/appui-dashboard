@@ -10,9 +10,9 @@
 $ctrl->obj->success = false;
 if (
   isset($ctrl->post['key']) &&
-  ($id = $ctrl->post['key']) &&
-  ($code = $ctrl->inc->options->code($id)) &&
-  $ctrl->inc->perm->has($id)
+  ($id_perm = $ctrl->inc->options->get_prop($ctrl->post['key'], 'id_alias')) &&
+  ($code = $ctrl->inc->options->code($id_perm)) &&
+  $ctrl->inc->perm->has($id_perm)
 ){
   $res = $ctrl->get_plugin_model($code, $ctrl->post);
   if ( \is_array($res) ){
