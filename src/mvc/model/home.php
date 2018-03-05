@@ -28,9 +28,6 @@ $no_cache = ['consultations', 'bugs', 'users', 'dossiers', 'news'];
 $i = 0;
 foreach ( $widgets as $i => $w ){
   if ( !empty($w['code']) ){
-    if ( $w['code'] === 'news' ){
-      $id_news_widget = $w['id'];
-    }
     $w['url'] = $model->plugin_url().'/data/'.$w['code'];
   }
   $w['key'] = $w['id'];
@@ -53,6 +50,5 @@ foreach ( $widgets as $i => $w ){
   */
 }
 return [
-  'id_news_widget' => $id_news_widget,
   'data' => $r
 ];
