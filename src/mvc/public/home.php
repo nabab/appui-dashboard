@@ -1,2 +1,2 @@
 <?php
-echo $ctrl->combo(_("Tableau de bord"), true);
+echo $ctrl->combo(_("Dashboard"), true);
