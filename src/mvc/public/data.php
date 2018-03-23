@@ -8,12 +8,28 @@
 /** @var \bbn\mvc\controller $ctrl */
 /** @var \bbn\user\permissions $ctrl->inc->perm */
 $ctrl->obj->success = false;
+
 if (
+  !empty($ctrl->post['key']) &&
+  (
+    (
+      ($id_perm = $ctrl->inc->options->get_prop($ctrl->post['key'], 'id_alias')) &&
+      ($code = $ctrl->inc->options->code($id_perm)) &&
+      $ctrl->inc->perm->has($id_perm)
+    )  ||
+    (
+      ($pref = $ctrl->inc->pref->get($ctrl->post['key'])) &&
+      ($code = $pref['widget']['code'])
+    )
+  )
+){
+
+/*if (
   isset($ctrl->post['key']) &&
   ($id_perm = $ctrl->inc->options->get_prop($ctrl->post['key'], 'id_alias')) &&
   ($code = $ctrl->inc->options->code($id_perm)) &&
   $ctrl->inc->perm->has($id_perm)
-){
+){*/
   $res = $ctrl->get_plugin_model($code, $ctrl->post);
   if ( \is_array($res) ){
     $ctrl->obj->success = true;

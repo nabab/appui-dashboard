@@ -1,10 +1,19 @@
 <?php
 /** @var \bbn\mvc\model $model */
+$id_widgets = $model->inc->options->from_code('widgets', 'dashboard', 'appui');
 $id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
 $widgets_perms = (array)$model->inc->perm->get_all($id_perm_widgets);
-$widgets = array_filter($model->inc->options->full_options('widgets', 'dashboard', 'appui'), function($w) use($widgets_perms){
+$widgets = array_filter($model->inc->options->full_options($id_widgets), function($w) use($widgets_perms){
   return \bbn\x::find($widgets_perms, ['id' => $w['id_alias']]) !== false;
 });
+$widgets = \bbn\x::merge_arrays($widgets, array_map(function($w){
+  return \bbn\x::merge_arrays($w['widget'], [
+    'id' => $w['id'],
+    'text' => $w['text'],
+    'num' => $w['num']
+  ]);
+}, $model->inc->pref->get_all($id_widgets)));
+
 /*
 $o = $model->inc->options->options($id_widgets);
 $p = $model->inc->perm->options($id_widgets);
