@@ -1,7 +1,7 @@
 <div class="bbn-dashboard bbn-masonry bbn-margin" id="cont">
 
 
-  <div class="k-block bbn-widget{{cls}}" v-for="d in data" /*v-if="data.link.num"*/>
+  <div class="k-block bbns-widget{{cls}}" v-for="d in data" /*v-if="data.link.num"*/>
     <div class="k-header"v-text="ciao"></div>
     <!--ul data-bbn-type="widget_{{link}}" data-template="home_{{template}}_tpl" data-bind="source: {{link}}.items"></ul-->
   </div>
@@ -10,9 +10,9 @@
 
 
 <script id="home_widget_tpl" type="text/x-kendo-template">
-  <div class="k-block bbn-widget">
+  <div class="k-block bbns-widget">
     <div class="k-header">#= title #</div>
-    <ul id="bbn-widgets_#: name #" data-template="home_#: template #_tpl" data-bind="source: data, visible: num"></ul>
+    <ul id="bbns-widgets_#: name #" data-template="home_#: template #_tpl" data-bind="source: data, visible: num"></ul>
   </div>
 </script>
 <script id="home_msg_tpl" type="text/x-kendo-template">
@@ -94,7 +94,7 @@
 <script id="home_bugs_tpl" type="text/x-kendo-template">
   <li class="apst-bugs">
   <span class="#: bugclass #" title="#: status #">
-    <a href="pm/panel/tasks/#: id #">#= title ? title : 'Sans titre' #</a>
+    <a href="pm/page/tasks/#: id #">#= title ? title : 'Sans titre' #</a>
   </span>
     <span>#= bbn.fn.fdate(last_activity) #</span>
   </li>

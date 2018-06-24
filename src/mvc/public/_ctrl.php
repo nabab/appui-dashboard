@@ -1,3 +1,5 @@
 <?php
 /** @var $ctrl \bbn\mvc\controller */
-define('APPUI_DASHBOARD_ROOT', $ctrl->plugin_url('appui-dashboard').'/');
+if ( !defined('APPUI_DASHBOARD_ROOT') ){
+  define('APPUI_DASHBOARD_ROOT', $ctrl->plugin_url('appui-dashboard').'/');
+}
