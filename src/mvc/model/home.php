@@ -3,7 +3,8 @@
 $id_widgets = $model->inc->options->from_code('widgets', 'dashboard', 'appui');
 $id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
 $widgets_perms = (array)$model->inc->perm->get_all($id_perm_widgets);
-$widgets = array_filter($model->inc->options->full_options($id_widgets), function($w) use($widgets_perms){
+$tmp = $model->inc->options->full_options($id_widgets);
+$widgets = $model->inc->user->is_admin() ? $tmp : array_filter($tmp, function($w) use($widgets_perms){
   return \bbn\x::find($widgets_perms, ['id' => $w['id_alias']]) !== false;
 });
 $widgets = \bbn\x::merge_arrays($widgets, array_map(function($w){
