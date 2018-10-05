@@ -22,7 +22,6 @@ if (
     )
   )
 ){
-
 /*if (
   isset($ctrl->post['key']) &&
   ($id_perm = $ctrl->inc->options->get_prop($ctrl->post['key'], 'id_alias')) &&

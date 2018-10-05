@@ -1,6 +1,6 @@
 <?php
 /** @var \bbn\mvc\controller $ctrl */
-$ctrl->obj->success = false;
+$ctrl->obj->success = false;  
 if ( isset($ctrl->arguments[0]) ){
   $actions = ['move', 'show', 'hide', 'save'];
   if ( \in_array($ctrl->arguments[0], $actions, true) ){
