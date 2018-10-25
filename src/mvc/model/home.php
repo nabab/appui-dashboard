@@ -2,11 +2,12 @@
 /** @var \bbn\mvc\model $model */
 $id_widgets = $model->inc->options->from_code('widgets', 'dashboard', 'appui');
 $id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
-$widgets_perms = (array)$model->inc->perm->get_all($id_perm_widgets);
+$widgets_perms = (array)$model->inc->perm->get($id_perm_widgets);
 $tmp = $model->inc->options->full_options($id_widgets);
 $widgets = $model->inc->user->is_admin() ? $tmp : array_filter($tmp, function($w) use($widgets_perms){
   return \bbn\x::find($widgets_perms, ['id' => $w['id_alias']]) !== false;
 });
+
 $widgets = \bbn\x::merge_arrays($widgets, array_map(function($w){
   return \bbn\x::merge_arrays($w['widget'], [
     'id' => $w['id'],
