@@ -28,7 +28,9 @@ if (
   ($code = $ctrl->inc->options->code($id_perm)) &&
   $ctrl->inc->perm->has($id_perm)
 ){*/
-  $res = $ctrl->get_plugin_model($code, $ctrl->post);
+  if ( !$res = $ctrl->get_plugin_model($code, $ctrl->post) ){
+    $res = $ctrl->get_model(APPUI_DASHBOARD_ROOT."/data/$code");
+  };
   if ( \is_array($res) ){
     $ctrl->obj->success = true;
     if ( \bbn\x::is_assoc($res) ){
