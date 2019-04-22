@@ -8,5 +8,5 @@
 
 /** @var \bbn\mvc\model $model */
 if ( isset($model->data['id'], $model->data['index']) ){
-  return $model->inc->pref->order($model->data['id'], $model->data['index']);
+  return $model->inc->pref->order($model->data['id'], $model->data['index'], true);
 }

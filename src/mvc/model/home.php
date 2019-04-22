@@ -2,19 +2,35 @@
 /** @var \bbn\mvc\model $model */
 $id_widgets = $model->inc->options->from_code('widgets', 'dashboard', 'appui');
 $id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
-$widgets_perms = (array)$model->inc->perm->get($id_perm_widgets);
+$widgets_perms = $model->inc->perm->full_options($id_perm_widgets);
+if ( !is_array($widgets_perms) ){
+  $widgets_perms = [];
+}
 $tmp = $model->inc->options->full_options($id_widgets);
 $widgets = $model->inc->user->is_admin() ? $tmp : array_filter($tmp, function($w) use($widgets_perms){
-  return \bbn\x::find($widgets_perms, ['id' => $w['id_alias']]) !== false;
+  return !empty($w['alias']['public']) || \bbn\x::find($widgets_perms, ['id_option' => $w['id_alias']]) !== false;
 });
 
-$widgets = \bbn\x::merge_arrays($widgets, array_map(function($w){
-  return \bbn\x::merge_arrays($w['widget'], [
-    'id' => $w['id'],
-    'text' => $w['text'],
-    'num' => $w['num']
-  ]);
-}, $model->inc->pref->get_all($id_widgets)));
+$widgets = \bbn\x::merge_arrays(
+  array_map(function($w) use($model){
+    if ( $pref_cfg = $model->inc->pref->get_cfg_by_option($w['id']) ){
+      $w = \bbn\x::merge_arrays($w, $pref_cfg);
+    }
+    if ( ($pref = $model->inc->pref->get_by_option($w['id'])) && isset($pref['num']) ){
+      $w['num'] = $pref['num'];
+    }
+    $w['index'] = $w['num'];
+    return $w;
+  }, $widgets), 
+  array_map(function($w){
+    return \bbn\x::merge_arrays($w['widget'], [
+      'id' => $w['id'],
+      'text' => $w['text'],
+      'index' => $w['num'],
+      'hidden' => !empty($w['hidden'])
+    ]);
+  }, $model->inc->pref->get_all($id_widgets))
+);
 
 /*
 $o = $model->inc->options->options($id_widgets);

@@ -1,0 +1,84 @@
+<?php
+
+/*
+ * Describe what it does!
+ *
+ **/
+
+/** @var $this \bbn\mvc\model*/
+$plugins = $model->get_plugins();
+$widgets = [];
+$fs = new \bbn\file\system();
+
+
+
+foreach ( $plugins as $plugin => $cfg ){
+  $done = [];
+  $fs->cd($cfg['path'].'mvc/public');
+  $reals = $fs->scan('./', '.php');
+  $files = [];
+  foreach ( $reals as $f ){
+    if (
+      $fs->exists($cfg['path'].'mvc/html/'.$f) ||
+      $fs->exists($cfg['path'].'mvc/html/'.substr($f, 0, -3).'html')
+    ){
+      if ( basename($f) !== 'index.php' ){
+        $new = $cfg['url'].'/'.substr($f, 0, -4);
+        $files = array_filter($files, function($a)use($new){
+          return strpos($a, $new.'/') === false;
+        });
+        $files[] = $new;
+      }
+    }
+  }
+  $links = [];
+  foreach ( $files as $f ){
+    $id_option = $model->inc->perm->is($f);    
+    if ( $id_option !== null ){
+    	$menus = $model->db->rselect_all([
+        'table' => "bbn_users_options_bits",
+        'fields' => ["id_user_option", "cfg", "text"],      
+        'join' =>[[
+          'table' => "bbn_users_options",
+          'on' => [
+            'conditions' => [[
+              'field' => "bbn_users_options_bits.id_user_option",        
+              'exp' => "bbn_users_options.id"
+           ]]
+          ]
+         ]],
+        'where' => [
+          'logic' => 'AND',
+          'conditions' => [[
+           	'field' => "bbn_users_options_bits.id_option",
+            'value' => $id_option
+          ],[
+           	'field' => "bbn_users_options.id_option",
+            'value' => $model->inc->options->from_root_code('menus', 'menus', 'appui')
+          ]]
+        ] 
+      ]);      
+    }
+    else{
+      $menus = false;
+    }
+    
+ 
+    
+    $links[] = [
+      'link' => $f,
+      'text' => substr($f, strlen($cfg['url'].'/')),      
+      'id_option' => $id_option,
+      'menu' => !empty($menus),
+      'n_menu' => !empty($menus) ? count($menus) : 0
+    ];
+    
+  }
+  $widgets[] = [
+    'text' => $plugin,
+    'items' => $links
+  ];
+}
+return [
+  'data' => $widgets
+];

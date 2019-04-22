@@ -6,7 +6,7 @@
         let res = [];
         res.push({
           text: bbn._('Add'),
-          icon: 'fas fa-plus',
+          icon: 'nf nf-fa-plus',
           command: this.insert
         });
         return res
@@ -28,19 +28,19 @@
         //if (this.source.cfg.write) {
           res.push({
             text: bbn._('Edit'),
-            icon: 'fas fa-edit',
+            icon: 'nf nf-fa-edit',
             command: this.edit,
             notext: true
           });
           res.push({
             text: bbn._('Copy'),
-            icon: 'fas fa-copy',
+            icon: 'nf nf-fa-copy',
             command: this.duplicate,
             notext: true
           });
           res.push({
             text: bbn._('Delete'),
-            icon: 'fas fa-trash',
+            icon: 'nf nf-fa-trash',
             command: this.remove,
             notext: true
           });
@@ -48,7 +48,7 @@
         /*if (this.source.cfg.allow_children || this.source.cfg.categories) {
           res.push({
             text: bbn._('List'),
-            icon: 'fas fa-list',
+            icon: 'nf nf-fa-list',
             url: this.source.root + 'list/' + row.id,
             notext: true
           });
