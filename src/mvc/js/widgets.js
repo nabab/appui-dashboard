@@ -71,7 +71,8 @@
         }, idx);
       },
       duplicate(row) {
-        let newRow = $.extend({}, row, {
+        //let newRow = $.extend({}, row, {
+        let newRow = bbn.fn.extend({}, row, {  
           id: '',
           code: null
         });

@@ -1,4 +1,4 @@
-<div class="bbn-full-screen">
+<div class="bbn-overlay">
   
   <bbn-table :source="source.widgets"
              :editor="$options.components['widgets-form']"
@@ -58,7 +58,7 @@
 </div>
 <script type="text/x-template" id="widgets-form">
   <bbn-form :action="'dashboard/actions/widgets/' + (source.row.id ? 'update' : 'insert')"
-            class="bbn-full-screen appui-options-form"
+            class="bbn-overlay appui-options-form"
             :source="source.row"
             @success="success"
             :data="source.data"
