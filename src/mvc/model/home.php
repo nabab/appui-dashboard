@@ -1,16 +1,26 @@
 <?php
 /** @var \bbn\mvc\model $model */
+// Getting the ID of the widgets' root in the options
 $id_widgets = $model->inc->options->from_code('widgets', 'dashboard', 'appui');
+// Getting the ID of the widgets' root permission in the options based on the current controller
 $id_perm_widgets = $model->inc->options->from_code('widgets', $model->inc->perm->get_current());
-$widgets_perms = $model->inc->perm->full_options($id_perm_widgets);
-if ( !is_array($widgets_perms) ){
+// Getting all the widgets' permissions for the current user
+if (!is_array($widgets_perms = $model->inc->perm->full_options($id_perm_widgets))) {
   $widgets_perms = [];
 }
+// All the widgets infos comes from the options
 $tmp = $model->inc->options->full_options($id_widgets);
+// Except if the user is an admin, the widget array will only contain
+// what he has permission for or what is public
 $widgets = $model->inc->user->is_admin() ? $tmp : array_filter($tmp, function($w) use($widgets_perms){
   return !empty($w['alias']['public']) || \bbn\x::find($widgets_perms, ['id_option' => $w['id_alias']]) !== false;
 });
+foreach ($widgets as &$w) {
 
+}
+
+// the final widget array will be merged with the preferences of the user for each widget
+//die(\bbn\x::dump($widgets, $model->inc->pref->get_all($id_widgets)));
 $widgets = \bbn\x::merge_arrays(
   array_map(function($w) use($model){
     if ( $pref_cfg = $model->inc->pref->get_cfg_by_option($w['id']) ){
@@ -53,6 +63,7 @@ $r = [];
 //$obs = new \bbn\appui\observer($model->db);
 $no_cache = ['consultations', 'bugs', 'users', 'dossiers', 'news'];
 $i = 0;
+
 foreach ( $widgets as $i => $w ){
   if ( !empty($w['code']) ){
     $w['url'] = $model->plugin_url().'/data/'.$w['code'];
@@ -76,6 +87,7 @@ foreach ( $widgets as $i => $w ){
   $obs->register($r['data'][$i], $w['code'], 'home');
   */
 }
+
 return [
   'data' => $r
 ];

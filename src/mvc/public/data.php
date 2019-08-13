@@ -8,6 +8,7 @@
 /** @var \bbn\mvc\controller $ctrl */
 /** @var \bbn\user\permissions $ctrl->inc->perm */
 $ctrl->obj->success = false;
+
 if (
   !empty($ctrl->post['key']) &&
   (
