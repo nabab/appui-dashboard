@@ -18,9 +18,8 @@
         props: ['source'],
         template: `<a :href="source.link"
 											v-text="source.text + '  (' + source.n_menu +')'"
-											:class="source.id_option ? 'bbn-green' : 'bbn-red'"
+											:class="source.id_option ? 'bbn-blue' : 'bbn-red'"
 										></a>` 
-										
       }
     }
   }

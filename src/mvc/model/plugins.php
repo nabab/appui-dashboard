@@ -33,8 +33,13 @@ foreach ( $plugins as $plugin => $cfg ){
   }
   $links = [];
   foreach ( $files as $f ){
-    $id_option = $model->inc->perm->is($f);    
+    $id_option = $model->inc->perm->is($f);
+    $title = substr($f, strlen($cfg['url'].'/'));
     if ( $id_option !== null ){
+      $opt = $model->inc->options->option($id_option);
+      if ($opt['text'] && ($opt['code'] !== $opt['text'])){
+        $title = $opt['text'];
+      }
     	$menus = $model->db->rselect_all([
         'table' => "bbn_users_options_bits",
         'fields' => ["id_user_option", "cfg", "text"],      
@@ -54,7 +59,7 @@ foreach ( $plugins as $plugin => $cfg ){
             'value' => $id_option
           ],[
            	'field' => "bbn_users_options.id_option",
-            'value' => $model->inc->options->from_root_code('menus', 'menus', 'appui')
+            'value' => $model->inc->options->from_code('menus', 'menus', 'appui')
           ]]
         ] 
       ]);      
@@ -62,12 +67,9 @@ foreach ( $plugins as $plugin => $cfg ){
     else{
       $menus = false;
     }
-    
- 
-    
     $links[] = [
       'link' => $f,
-      'text' => substr($f, strlen($cfg['url'].'/')),      
+      'text' => $title,
       'id_option' => $id_option,
       'menu' => !empty($menus),
       'n_menu' => !empty($menus) ? count($menus) : 0
