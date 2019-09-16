@@ -16,35 +16,22 @@ $tmp = $model->inc->options->full_options($id_widgets);
 $widgets = $model->inc->user->is_admin() ? $tmp : array_filter($tmp, function($w) use($widgets_perms){
   return !empty($w['alias']['public']) || \bbn\x::find($widgets_perms, ['id_option' => $w['id_alias']]) !== false;
 });
-foreach ($widgets as &$w) {
-
-}
-
 // the final widget array will be merged with the preferences of the user for each widget
-//die(\bbn\x::dump($widgets, $model->inc->pref->get_all($id_widgets)));
-$widgets = \bbn\x::merge_arrays(
-  array_map(function($w) use($model){
-    
-    if ( $pref_cfg = $model->inc->pref->get_cfg_by_option($w['id']) ){
-      $w = \bbn\x::merge_arrays($w, $pref_cfg);
-    }
+//die(\bbn\x::dump($model->inc->pref->get_all($id_widgets)));
+$widgets = array_map(function($w) use($model){
+  // What is it?
+  if ( $pref_cfg = $model->inc->pref->get_cfg_by_option($w['id']) ){
+    $w = \bbn\x::merge_arrays($w, $pref_cfg);
+  }
 
-    if ( ($pref = $model->inc->pref->get_by_option($w['id'])) && isset($pref['num']) ){
-      $w['num'] = $pref['num'];
-    }
-    
+  if ( ($pref = $model->inc->pref->get_by_option($w['id'])) && isset($pref['num']) ){
+    $w['num'] = $pref['num'];
+  }
+  if ( !isset($w['index']) ){
     $w['index'] = $w['num'];
-    return $w;
-  }, $widgets), 
-  array_map(function($w){    
-    return \bbn\x::merge_arrays($w['widget'], [
-      'id' => $w['id'],
-      'text' => $w['text'],
-      'index' => $w['num'],
-      'hidden' => !empty($w['hidden'])
-    ]);
-  }, $model->inc->pref->get_all($id_widgets))
-);
+  }
+  return $w;
+}, $widgets);
 
 /*
 $o = $model->inc->options->options($id_widgets);
@@ -67,7 +54,6 @@ $r = [];
 //$obs = new \bbn\appui\observer($model->db);
 $no_cache = ['consultations', 'bugs', 'users', 'dossiers', 'news'];
 $i = 0;
-
 foreach ( $widgets as $i => $w ){
   if ( !empty($w['code']) ){
     $w['url'] = $model->plugin_url().'/data/'.$w['code'];
@@ -93,5 +79,6 @@ foreach ( $widgets as $i => $w ){
 }
 
 return [
-  'data' => $r
+  'data' => $r,
+  'root' => APPUI_DASHBOARD_ROOT
 ];
