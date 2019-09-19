@@ -3,6 +3,7 @@
                :sortable="true"
                ref="dashboard"
                :storage="true"
-               @order="sortWidgets"
+               @sort="sortWidgets"
+               
                class="bbn-background"
 ></bbn-dashboard>

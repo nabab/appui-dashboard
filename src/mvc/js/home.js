@@ -9,14 +9,15 @@
     methods: {
       sortWidgets(){
         let dab = this.getRef('dashboard');
-        bbn.fn.log("sortWid", dab, dab.currentOrder);
-        if ( dab && dab.currentOrder && dab.currentOrder.length ){
+        if ( dab ){
           this.post(this.source.root + 'actions/order', {
             order: dab.currentOrder
           }, d => {
-            bbn.fn.log(d);
             if ( d.success ){
-              appui.success();
+              appui.success(bbn._('Sorting saved'));
+            }
+            else if (d.deleted ){
+              appui.success(bbn._('Sorting reset successfull'));
             }
             else{
               appui.error();
