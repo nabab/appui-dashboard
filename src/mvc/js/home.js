@@ -3,14 +3,15 @@
   return {
     data(){
       return {
-        widgets: this.source.data
+        root: appui.plugins['appui-dashboard'] + '/',
+        widgets: this.source.widgets
       }
     },
     methods: {
       sortWidgets(){
         let dab = this.getRef('dashboard');
         if ( dab ){
-          this.post(this.source.root + 'actions/order', {
+          this.post(this.root + '/actions/order', {
             order: dab.currentOrder
           }, d => {
             if ( d.success ){
