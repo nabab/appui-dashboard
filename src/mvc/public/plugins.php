@@ -5,4 +5,4 @@
  **/
 
 /** @var $this \bbn\mvc\controller */
-$ctrl->combo(_('Plugins pages dashboard'), true);
+$ctrl->combo(_('Automated plugins dashboard'), true);

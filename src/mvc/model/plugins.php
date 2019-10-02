@@ -14,13 +14,13 @@ $fs = new \bbn\file\system();
 
 foreach ( $plugins as $plugin => $cfg ){
   $done = [];
-  $fs->cd($cfg['path'].'mvc/public');
+  $fs->cd($cfg['path'].'src/mvc/public');
   $reals = $fs->scan('./', '.php');
   $files = [];
   foreach ( $reals as $f ){
     if (
-      $fs->exists($cfg['path'].'mvc/html/'.$f) ||
-      $fs->exists($cfg['path'].'mvc/html/'.substr($f, 0, -3).'html')
+      $fs->exists($cfg['path'].'src/mvc/html/'.$f) ||
+      $fs->exists($cfg['path'].'src/mvc/html/'.substr($f, 0, -3).'html')
     ){
       if ( basename($f) !== 'index.php' ){
         $new = $cfg['url'].'/'.substr($f, 0, -4);
