@@ -7,7 +7,7 @@
         res.push({
           text: bbn._('Add'),
           icon: 'nf nf-fa-plus',
-          command: this.insert
+          action: this.insert
         });
         return res
       },
@@ -29,19 +29,19 @@
           res.push({
             text: bbn._('Edit'),
             icon: 'nf nf-fa-edit',
-            command: this.edit,
+            action: this.edit,
             notext: true
           });
           res.push({
             text: bbn._('Copy'),
             icon: 'nf nf-fa-copy',
-            command: this.duplicate,
+            action: this.duplicate,
             notext: true
           });
           res.push({
             text: bbn._('Delete'),
             icon: 'nf nf-fa-trash',
-            command: this.remove,
+            action: this.remove,
             notext: true
           });
         //}
