@@ -41,7 +41,7 @@ $grid = new \bbn\appui\grid($model->db, $model->data, [
   ]
 */
 ]);
-if ( $grid->check() ){
+if ($grid->check()) {
   $res = $grid->get_datatable();
   $res['data'] = array_map(function($a){
     if ( substr($a['last_connection'], 0, 10) === strftime('%Y-%m-%d') ){
