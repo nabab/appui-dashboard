@@ -31,11 +31,8 @@ if ( !empty($ctrl->post['key']) ){
     ($code = $ctrl->inc->options->code($id_perm)) &&
     $ctrl->inc->perm->has($id_perm)
   ){*/
-    if ( !isset($info['cache']) ){
-      $info['cache'] = 0 ;
-    }
-    if ( !($res = $ctrl->get_plugin_model($code, $ctrl->post, null, $info['cache'])) ) {
-      if ( $info['cache'] ) {
+    if (!($res = $ctrl->get_plugin_model($code, $ctrl->post, null, $info['cache'] ?? 0))) {
+      if ( !empty($info['cache']) ) {
         $res = $ctrl->get_cached_model(APPUI_DASHBOARD_ROOT."/data/$code", $info['cache']);
       }
       else {
