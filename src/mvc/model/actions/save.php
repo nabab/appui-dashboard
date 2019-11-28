@@ -6,7 +6,6 @@
  * Time: 11:32
  * @var \bbn\mvc\model $model
  */
-
 if ( !empty($model->data['id']) && !empty($model->data['cfg']) ){
   return ['success' => $model->inc->dashboard->save($model->data)];
 }
