@@ -3,7 +3,7 @@
   "code": "widgets",
   "id_parent": ["home", "___appui-plugin-url___/","page","permissions","appui"],
   "items": [{
-    "test": "Users",
+    "text": "Users",
     "code": "users"
   }]
 }]
