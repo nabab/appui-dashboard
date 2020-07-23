@@ -17,11 +17,11 @@
       "schema": "[{\"title\":\"Closable\",\"field\":\"closable\",\"type\":\"boolean\",\"showable\":true,\"editable\":true,\"hidden\":false,\"width\":70,\"options\":{\"value\":true,\"novalue\":false},\"cls\":\"bbn-c\",\"default\":false},{\"title\":\"Observe\",\"field\":\"observe\",\"type\":\"boolean\",\"showable\":true,\"editable\":true,\"hidden\":false,\"options\":{\"value\":true,\"novalue\":false},\"width\":70,\"cls\":\"bbn-c\",\"default\":false},{\"title\":\"Component\",\"field\":\"component\",\"type\":\"string\",\"showable\":true,\"editable\":true,\"hidden\":false,\"options\":{}},{\"title\":\"itemComponent\",\"field\":\"itemComponent\",\"type\":\"string\",\"showable\":true,\"editable\":true,\"hidden\":false,\"options\":{}},{\"title\":\"Limit\",\"field\":\"limit\",\"type\":\"number\",\"showable\":true,\"editable\":true,\"hidden\":true,\"options\":{},\"default\":5},{\"title\":\"Right buttons\",\"field\":\"buttonsRight\",\"type\":\"json\",\"showable\":false,\"editable\":true,\"hidden\":true,\"options\":{\"style\":\"height: 200px !important\"},\"default\":\"[]\"},{\"title\":\"Left buttons\",\"field\":\"buttonsLeft\",\"type\":\"json\",\"showable\":false,\"editable\":true,\"hidden\":true,\"options\":{\"style\":\"height: 200px !important\"},\"default\":\"[]\"},{\"field\":\"options\",\"title\":\"Component's options\",\"hidden\":true,\"editable\":true,\"filterable\":false,\"type\":\"json\",\"options\":{\"style\":\"height:200px !important\"},\"showable\":false,\"default\":\"{}\"}]",
       "notext": null,
       "noparent": null,
-      "id_root_alias": ["widgets","home","___appui-plugin-url___","page","permissions","appui"],
+      "id_root_alias": ["widgets","home","___appui-plugin-url___/","page","permissions","appui"],
       "i18n": "fr"
     },
     "items": [{
-      "id_alias": ["users","widgets","home","___appui-plugin-url___","page","permissions","appui"],
+      "id_alias": ["users","widgets","home","___appui-plugin-url___/","page","permissions","appui"],
       "num": 1,
       "text": "Users",
       "code": "users",
