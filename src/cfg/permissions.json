@@ -1,7 +1,7 @@
 [{
   "text": "Widgets",
   "code": "widgets",
-  "id_parent": ["home", "___appui-plugin-url___/","page","permissions","appui"],
+  "id_parent": ["home", "|*appui-dashboard*|/","page","permissions","appui"],
   "items": [{
     "text": "Users",
     "code": "users"

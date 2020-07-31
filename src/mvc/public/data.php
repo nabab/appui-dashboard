@@ -24,14 +24,18 @@ if ( !empty($ctrl->post['key']) ){
     $code = $info['widget']['code'];
   }
   if ( $code && $ctrl->inc->perm->has($id_perm) ){
-    //die(var_dump($id_perm, $code, $info));
-  /*if (
-    isset($ctrl->post['key']) &&
-    ($id_perm = $ctrl->inc->options->get_prop($ctrl->post['key'], 'id_alias')) &&
-    ($code = $ctrl->inc->options->code($id_perm)) &&
-    $ctrl->inc->perm->has($id_perm)
-  ){*/
-    if (!($res = $ctrl->get_plugin_model($code, $ctrl->post, $ctrl->plugin_url('appui-dashboard'), $info['cache'] ?? 0))) {
+    if (
+      ($perm = $ctrl->inc->options->option($id_perm)) &&
+      ($parent = $ctrl->inc->options->option($perm['id_parent'])) &&
+      (strpos($parent['code'], 'appui-') === 0) &&
+      ($parent = $ctrl->inc->options->option($parent['id_parent'])) &&
+      ($parent['code'] === 'plugins') &&
+      ($plugin = $ctrl->inc->options->code($parent['id_parent'])) &&
+      ($plugin = $ctrl->plugin_name(substr($plugin, 0, strlen($plugin)-1)))
+    ){
+      $res = $ctrl->get_subplugin_model($code, $ctrl->post, $ctrl->plugin_url($plugin), 'appui-dashboard', $info['cache'] ?? 0);
+    }
+    else if (!($res = $ctrl->get_plugin_model($code, $ctrl->post, $ctrl->plugin_url('appui-dashboard'), $info['cache'] ?? 0))) {
       if ( !empty($info['cache']) ) {
         $res = $ctrl->get_cached_model(APPUI_DASHBOARD_ROOT."/data/$code", $info['cache']);
       }
