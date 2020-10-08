@@ -11,7 +11,7 @@ if ( isset($ctrl->post['text'], $ctrl->post['id']) ){
   if ( !empty($cfg['schema']) && ($schema = json_decode($cfg['schema'], true)) ){
     foreach ( $ctrl->post as $i => $d ){
       if (
-        (($idx = \bbn\x::find($schema, ['field' => $i])) !== false) &&
+        (($idx = \bbn\x::find($schema, ['field' => $i])) !== null) &&
         isset($schema[$idx]['type']) &&
         (strtolower($schema[$idx]['type']) === 'json')
       ){
