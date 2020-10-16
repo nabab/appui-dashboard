@@ -33,7 +33,7 @@ if ( !empty($ctrl->post['key']) ){
       ($plugin = $ctrl->inc->options->code($parent['id_parent'])) &&
       ($plugin = $ctrl->plugin_name(substr($plugin, 0, strlen($plugin)-1)))
     ){
-      $res = $ctrl->get_subplugin_model($code, $ctrl->post, $ctrl->plugin_url($plugin), 'appui-dashboard', $info['cache'] ?? 0);
+      $res = $ctrl->get_subplugin_model($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
     }
     else if (!($res = $ctrl->get_plugin_model($code, $ctrl->post, $ctrl->plugin_url('appui-dashboard'), $info['cache'] ?? 0))) {
       if ( !empty($info['cache']) ) {
