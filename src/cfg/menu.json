@@ -1,9 +1,13 @@
 {
   "text": "Dashboard",
+  "num": 19,
   "icon": "nf nf-fa-tachometer",
-  "items": [{
-    "text": "Home",
-    "icon": "nf nf-home",
-    "link": "home"
-  }]
+  "items": [
+    {
+      "text": "Home",
+      "num": 1,
+      "icon": "nf nf-fa-home",
+      "link": "home"
+    }
+  ]
 }
