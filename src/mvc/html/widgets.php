@@ -58,7 +58,7 @@
 </div>
 <script type="text/x-template" id="widgets-form">
   <bbn-form :action="'dashboard/actions/widgets/' + (source.row.id ? 'update' : 'insert')"
-            class="bbn-overlay appui-options-form"
+            class="bbn-overlay appui-option-form"
             :source="source.row"
             @success="success"
             :data="source.data"

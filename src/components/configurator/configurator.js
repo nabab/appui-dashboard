@@ -3,7 +3,7 @@
     props: ['source'],
     data(){
       return {
-        test: "Hello"
+        optionsRoot: appui.plugins['appui-option']
       };
     }
   };

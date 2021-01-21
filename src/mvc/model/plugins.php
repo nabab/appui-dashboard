@@ -59,7 +59,7 @@ foreach ( $plugins as $plugin => $cfg ){
             'value' => $id_option
           ],[
            	'field' => "bbn_users_options.id_option",
-            'value' => $model->inc->options->from_code('menus', 'menus', 'appui')
+            'value' => $model->inc->options->from_code('menus', 'menu', 'appui')
           ]]
         ] 
       ]);      

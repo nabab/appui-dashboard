@@ -7,7 +7,7 @@
     </bbn-pane>
     <bbn-pane :resizable="true">
       <div class="bbn-overlay">
-        <bbn-form action="options/actions/update" :scrollable="true" :source="source">
+        <bbn-form :action="optionsRoot + '/actions/update'" :scrollable="true" :source="source">
 
           <div class="bbn-grid-fields bbn-padded">
             <div>Texte</div>
