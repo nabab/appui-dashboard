@@ -1,24 +1,24 @@
 <?php
 /**
- * @var bbn\mvc\model $model
+ * @var bbn\Mvc\Model $model
  */
 
 /* 
 $res = ['success' => false];
 if ( isset($model->data['order']) && is_array($model->data['order']) && defined('BBN_REFERER') ){
   if (
-    ($route = $ctrl->get_route(BBN_REFERER, 'public')) &&
-    ($id_perm = $ctrl->inc->perm->from_path($route['path']))
+    ($route = $ctrl->getRoute(BBN_REFERER, 'public')) &&
+    ($id_perm = $ctrl->inc->perm->fromPath($route['path']))
   ){
-    if ( !$model->inc->pref->user_has($id_perm) ){
+    if ( !$model->inc->pref->userHas($id_perm) ){
       $model->inc->pref->add($id_perm, []);
     }
-    $pref = $model->inc->pref->get_by_option($id_perm);
+    $pref = $model->inc->pref->getByOption($id_perm);
     if ( $pref ){
       $i = 0;
-      $res['deleted'] = $model->inc->pref->delete_bits($pref['id']);
+      $res['deleted'] = $model->inc->pref->deleteBits($pref['id']);
       foreach ( $model->data['order'] as $i => $id ){
-        $i += (int)$model->inc->pref->add_bit($pref['id'], [
+        $i += (int)$model->inc->pref->addBit($pref['id'], [
           'id_option' => $id,
           'num' => $i + 1
         ]);

@@ -4,23 +4,23 @@
  *
  **/
 
-/** @var $ctrl \bbn\mvc\controller */
+/** @var $ctrl \bbn\Mvc\Controller */
 $ctrl->obj->success = false;
 if ( isset($ctrl->post['id_parent']) ){
   die(var_dump($ctrl->post['id_parent']));
   if ( !empty($ctrl->post['source_children']) ){
-    $tree = $ctrl->inc->options->full_tree($ctrl->post['source_children']);
+    $tree = $ctrl->inc->options->fullTree($ctrl->post['source_children']);
     if ( isset($tree['items']) ){
       $ctrl->post['items'] = $tree['items'];
     }
     unset($ctrl->post['source_children']);
   }
   
-  $cfg = $ctrl->inc->options->get_cfg($ctrl->post['id_parent']);
+  $cfg = $ctrl->inc->options->getCfg($ctrl->post['id_parent']);
   if ( !empty($cfg['schema']) && ($schema = json_decode($cfg['schema'], true)) ){
     foreach ( $ctrl->post as $i => $d ){
       if ( 
-        (($idx = \bbn\x::find($schema, ['field' => $i])) !== null) &&
+        (($idx = \bbn\X::find($schema, ['field' => $i])) !== null) &&
         isset($schema[$idx]['type']) && 
         (strtolower($schema[$idx]['type']) === 'json')
       ){
@@ -31,6 +31,6 @@ if ( isset($ctrl->post['id_parent']) ){
   
   if ( $id = $ctrl->inc->options->add($ctrl->post) ){
     $ctrl->obj->success = true;
-    $ctrl->obj->data = $ctrl->inc->options->native_option($id);
+    $ctrl->obj->data = $ctrl->inc->options->nativeOption($id);
   }
 }

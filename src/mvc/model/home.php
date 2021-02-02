@@ -1,4 +1,4 @@
 <?php
-/** @var \bbn\mvc\model $model */
+/** @var \bbn\Mvc\Model $model */
 
-return $model->inc->dashboard->get_widgets($model->plugin_url().'/data/');
+return $model->inc->dashboard->getWidgets($model->pluginUrl().'/data/');

@@ -5,17 +5,17 @@
  * Date: 05/06/2017
  * Time: 16:20
  */
-/** @var \bbn\mvc\controller $ctrl */
+/** @var \bbn\Mvc\Controller $ctrl */
 /** @var \stdClass           $ctrl->obj */
 $ctrl->obj->success = false;
 if (!empty($ctrl->post['key'])) {
 // Fetches the permission's alias: widget in dashboard options
-/** @var \bbn\user\options $ctrl->inc->options */
+/** @var \bbn\User\options $ctrl->inc->options */
 if ($info = $ctrl->inc->options->option($ctrl->post['key'])) {
     $id_perm = $info['id_alias'];
     $code    = $info['code'];
-    if ($pref = $ctrl->inc->pref->get_by_option($ctrl->post['key'])) {
-      $info = \bbn\x::merge_arrays($info, $pref);
+    if ($pref = $ctrl->inc->pref->getByOption($ctrl->post['key'])) {
+      $info = \bbn\X::mergeArrays($info, $pref);
     }
   }
   // Otherwise checking if the key is a preference
@@ -31,22 +31,22 @@ if ($info = $ctrl->inc->options->option($ctrl->post['key'])) {
         && ($parent = $ctrl->inc->options->option($parent['id_parent']))
         && ($parent['code'] === 'plugins')
         && ($plugin = $ctrl->inc->options->code($parent['id_parent']))
-        && ($plugin = $ctrl->plugin_name(substr($plugin, 0, strlen($plugin) - 1)))
+        && ($plugin = $ctrl->pluginName(substr($plugin, 0, Strlen($plugin) - 1)))
     ) {
-      $res = $ctrl->get_subplugin_model($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
+      $res = $ctrl->getSubpluginModel($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
     }
-    elseif (!($res = $ctrl->get_plugin_model($code, $ctrl->post, $ctrl->plugin_url('appui-dashboard'), $info['cache'] ?? 0))) {
+    elseif (!($res = $ctrl->getPluginModel($code, $ctrl->post, $ctrl->pluginUrl('appui-dashboard'), $info['cache'] ?? 0))) {
       if (!empty($info['cache'])) {
-        $res = $ctrl->get_cached_model(APPUI_DASHBOARD_ROOT."/data/$code", $info['cache']);
+        $res = $ctrl->getCachedModel(APPUI_DASHBOARD_ROOT."/data/$code", $info['cache']);
       }
       else {
-        $res = $ctrl->get_model(APPUI_DASHBOARD_ROOT."/data/$code");
+        $res = $ctrl->getModel(APPUI_DASHBOARD_ROOT."/data/$code");
       }
     }
 
     if (\is_array($res)) {
       $ctrl->obj->success = true;
-      if (\bbn\x::is_assoc($res)) {
+      if (\bbn\X::isAssoc($res)) {
         foreach ($res as $k => $r) {
           $ctrl->obj->$k = $r;
         }

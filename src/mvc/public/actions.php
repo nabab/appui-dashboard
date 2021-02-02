@@ -1,10 +1,10 @@
 <?php
-/** @var \bbn\mvc\controller $ctrl */
+/** @var \bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;  
 if ( isset($ctrl->arguments[0]) && defined('BBN_REFERER') ){
   $actions = ['save', 'order'];
   if ( \in_array($ctrl->arguments[0], $actions, true) ){
-    if ( $ctrl->obj->data = $ctrl->get_object_model('./actions/'.$ctrl->arguments[0], $ctrl->post) ){
+    if ( $ctrl->obj->data = $ctrl->getObjectModel('./actions/'.$ctrl->arguments[0], $ctrl->post) ){
       $ctrl->obj->success = true;
     }
   }

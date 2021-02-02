@@ -5,10 +5,10 @@
  *
  **/
 
-/** @var $this \bbn\mvc\model*/
-$plugins = $model->get_plugins();
+/** @var $this \bbn\Mvc\Model*/
+$plugins = $model->getPlugins();
 $widgets = [];
-$fs = new \bbn\file\system();
+$fs = new \bbn\File\System();
 
 
 
@@ -34,13 +34,13 @@ foreach ( $plugins as $plugin => $cfg ){
   $links = [];
   foreach ( $files as $f ){
     $id_option = $model->inc->perm->is($f);
-    $title = substr($f, strlen($cfg['url'].'/'));
+    $title = substr($f, Strlen($cfg['url'].'/'));
     if ( $id_option !== null ){
       $opt = $model->inc->options->option($id_option);
       if ($opt['text'] && ($opt['code'] !== $opt['text'])){
         $title = $opt['text'];
       }
-    	$menus = $model->db->rselect_all([
+    	$menus = $model->db->rselectAll([
         'table' => "bbn_users_options_bits",
         'fields' => ["id_user_option", "cfg", "text"],      
         'join' =>[[
@@ -59,7 +59,7 @@ foreach ( $plugins as $plugin => $cfg ){
             'value' => $id_option
           ],[
            	'field' => "bbn_users_options.id_option",
-            'value' => $model->inc->options->from_code('menus', 'menu', 'appui')
+            'value' => $model->inc->options->fromCode('menus', 'menu', 'appui')
           ]]
         ] 
       ]);      
