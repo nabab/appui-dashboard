@@ -31,7 +31,7 @@ if ($info = $ctrl->inc->options->option($ctrl->post['key'])) {
         && ($parent = $ctrl->inc->options->option($parent['id_parent']))
         && ($parent['code'] === 'plugins')
         && ($plugin = $ctrl->inc->options->code($parent['id_parent']))
-        && ($plugin = $ctrl->pluginName(substr($plugin, 0, Strlen($plugin) - 1)))
+        && ($plugin = $ctrl->pluginName(substr($plugin, 0, strlen($plugin) - 1)))
     ) {
       $res = $ctrl->getSubpluginModel($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
     }

@@ -34,7 +34,7 @@ foreach ( $plugins as $plugin => $cfg ){
   $links = [];
   foreach ( $files as $f ){
     $id_option = $model->inc->perm->is($f);
-    $title = substr($f, Strlen($cfg['url'].'/'));
+    $title = substr($f, strlen($cfg['url'].'/'));
     if ( $id_option !== null ){
       $opt = $model->inc->options->option($id_option);
       if ($opt['text'] && ($opt['code'] !== $opt['text'])){
