@@ -3,127 +3,127 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: info@bbn.so\n"
 "last-Translator: BBN Solutions <support@bbn.solutions>\n"
-"Language-Team: FR <FR@li.org>\n"
+"Language-Team: IT <IT@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-16 15:11+0100\n"
-"POT-Revision-Date: 2021-02-16 15:11+0100\n"
-"Language: fr\n"
+"POT-Creation-Date: 2021-02-16 17:30+0100\n"
+"POT-Revision-Date: 2021-02-16 17:30+0100\n"
+"Language: it\n"
 "X-Domain: appui-dashboard\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Num"
-msgstr "Nb"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Text"
-msgstr "Texte"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Closable"
-msgstr "Fermable"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Observe"
-msgstr "Observe"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Component"
-msgstr "Composant"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "itemComponent"
-msgstr "Composant de liste"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Actions"
-msgstr "Actions"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Limit"
-msgstr "Limite"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Right buttons"
-msgstr "Boutons droits"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Left buttons"
-msgstr "Boutons gauches"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Component's options"
-msgstr "Options du composant"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
 msgid "Alias"
-msgstr "Alias"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/home.js
 msgid "Sorting saved"
-msgstr "Ordre sauvegardé"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/home.js
 msgid "Sorting reset successfull"
-msgstr "Ordre remis à zéro"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Add"
-msgstr "Ajouter"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "New widget"
-msgstr "Nouveau widget"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Edit"
-msgstr "Modifier"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Copy"
-msgstr "Copier"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Delete"
-msgstr "Supprimer"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "New option"
-msgstr "Nouvelle option"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Updating option"
-msgstr "Mise à jour de l'option"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Do you also want to duplicate children options?"
-msgstr "Voulez-vous copier aussi les options descendantes?"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Widget successfully updated"
-msgstr "Le widget a bien été modifié"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "Widget successfully inserted"
-msgstr "Le widget a bien été créé"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/public/actions.php
 msgid "Wrong action"
-msgstr "L'action n'a pas été comprise"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/public/actions.php
 msgid "Wrong URL"
-msgstr "URL non valide"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/public/home.php
 msgid "Dashboard"
-msgstr "Tableau de bord"
+msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/public/plugins.php
 msgid "Automated plugins dashboard"
@@ -131,4 +131,4 @@ msgstr ""
 
 #: /home/thomas/domains/apstapp.thomas.lan/_appui/vendor/bbn/appui-dashboard/src/mvc/public/widgets.php
 msgid "Widgets"
-msgstr "Widgets"
+msgstr ""
