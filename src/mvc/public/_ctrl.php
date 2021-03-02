@@ -4,7 +4,7 @@ $ok = true;
 if ( !defined('APPUI_DASHBOARD_ROOT') ){
   define('APPUI_DASHBOARD_ROOT', $ctrl->pluginUrl('appui-dashboard').'/');
   try {
-    $ctrl->addInc('dashboard', new \bbn\Appui\Dashboard('default'));
+    $ctrl->addInc('dashboard', new \bbn\Appui\Dashboard($ctrl->post['id_dashboard'] ?? 'default'));
   }
   catch ( Exception $e ){
     $ctrl->obj->error = $e->getMessage();

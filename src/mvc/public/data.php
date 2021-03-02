@@ -8,18 +8,20 @@
 /** @var \bbn\Mvc\Controller $ctrl */
 /** @var \stdClass           $ctrl->obj */
 $ctrl->obj->success = false;
-if (!empty($ctrl->post['key'])) {
-// Fetches the permission's alias: widget in dashboard options
-/** @var \bbn\User\options $ctrl->inc->options */
-if ($info = $ctrl->inc->options->option($ctrl->post['key'])) {
+if (!empty($ctrl->post['key'])
+  && ($idWidget = $ctrl->inc->dashboard->getWidgetOption($ctrl->post['key']) ?: $ctrl->post['key'])
+) {
+  // Fetches the permission's alias: widget in dashboard options
+  /** @var \bbn\User\options $ctrl->inc->options */
+  if ($info = $ctrl->inc->options->option($idWidget)) {
     $id_perm = $info['id_alias'];
     $code    = $info['code'];
-    if ($pref = $ctrl->inc->pref->getByOption($ctrl->post['key'])) {
+    if ($pref = $ctrl->inc->pref->getByOption($idWidget)) {
       $info = \bbn\X::mergeArrays($info, $pref);
     }
   }
   // Otherwise checking if the key is a preference
-  elseif ($info = $ctrl->inc->pref->get($ctrl->post['key'])) {
+  elseif ($info = $ctrl->inc->pref->get($idWidget)) {
     $id_perm = $info['id_option'];
     $code    = $info['widget']['code'];
   }
