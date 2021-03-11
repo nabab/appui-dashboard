@@ -1,0 +1,1 @@
+<appui-dashboard-configurator-dashboard :source="source"></appui-dashboard-configurator-dashboard>
