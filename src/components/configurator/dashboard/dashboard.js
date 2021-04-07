@@ -175,7 +175,7 @@
   <span class="bbn-tree-node-block-title">
     <span v-html="source.text"/>
   </span>
-  <i v-if="!source.numChildren"
+  <i v-if="!source.numChildren && (!!source.data.component || !!source.data.itemComponent)"
      class="nf nf-fa-plus_circle bbn-p"
      @click="addWidget"/>
 </span>

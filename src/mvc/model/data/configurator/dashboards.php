@@ -39,7 +39,8 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
   ], [
     'field' => $model->db->cfn($pFields['text'], $pTable),
     'dir' => 'asc'
-  ]]
+  ]],
+  'group_by' => [$model->db->cfn($pFields['id'], $pTable)]
 ]);
 
 if ($grid->check()) {
