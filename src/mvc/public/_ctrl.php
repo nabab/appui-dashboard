@@ -13,12 +13,14 @@ if (!defined('APPUI_DASHBOARD_ROOT')) {
     $id = $ctrl->arguments[0];
   }
   else {
-    $dashboards = $ctrl->inc->dashboard->getUserDashboards();
-    if (X::getRow($dashboards, ['code' => 'default'])) {
-      $id = 'default';
-    }
-    elseif (!empty($dashboards)) {
-      $id = $dashboards[0]['id'];
+    if (!$id = $ctrl->inc->dashboard->getDefault()) {
+      $dashboards = $ctrl->inc->dashboard->getUserDashboards();
+      if (X::getRow($dashboards, ['code' => 'default'])) {
+        $id = 'default';
+      }
+      elseif (!empty($dashboards)) {
+        $id = $dashboards[0]['id'];
+      }  
     }
   }
 
