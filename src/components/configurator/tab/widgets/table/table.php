@@ -28,6 +28,12 @@
                :hidden="true"
                :editable="false"
                :default="source ? source.id : null"/>
+  <bbns-column field="plugin"
+               title="<?=_('Plugin')?>"
+               :hidden="true"
+               :editable="true"
+               :default="defaultPlugin"
+               :editor="$options.components.plugin"/>
   <bbns-column :field="configurator.optCfg.fields.text"
                title="<?=_('Name')?>"
                :options="{
@@ -48,7 +54,8 @@
                }"
                cls="bbn-c"
                :default="false"
-               :render="renderClosable"/>
+               :render="renderClosable"
+               editor="bbn-checkbox"/>
   <bbns-column field="observe"
                title="<?=_('Observe')?>"
                type="boolean"
@@ -59,7 +66,8 @@
                }"
                cls="bbn-c"
                :default="false"
-               :render="renderObserve"/>
+               :render="renderObserve"
+               editor="bbn-checkbox"/>
   <bbns-column field="component"
                title="<?=_('Component')?>"/>
   <bbns-column field="itemComponent"

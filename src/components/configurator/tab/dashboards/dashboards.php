@@ -39,6 +39,11 @@
                  nullable: true
                }"/>
   <bbns-column :buttons="[{
+                 text: '<?=_('See')?>',
+                 action: open,
+                 icon: 'nf nf-fa-eye',
+                 notext: true
+               }, {
                  text: '<?=_('Configure')?>',
                  action: configure,
                  icon: 'nf nf-oct-settings',
@@ -54,6 +59,6 @@
                  icon: 'nf nf-fa-trash',
                  notext: true
                }]"
-               :width="110"
+               :width="150"
                cls="bbn-c"/>
 </bbn-table>
