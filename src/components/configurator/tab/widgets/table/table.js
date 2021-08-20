@@ -2,14 +2,13 @@
   return {
     data(){
       return {
-        compName: bbn.fn.randomString()
+        defaultPlugin: appui.plugins['appui-dashboard']
       }
     },
     methods: {
       hasExpander(row){
-        let props = Object.keys(row.data);
-        return !props.includes('component') && !props.includes('itemComponent') ? {
-          template: `<component is="appui-dashboard-configurator-tab-widgets" :source="source"/>`,
+        return !!row.data && !!row.data.isContainer ? {
+          template: `<component is="appui-dashboard-configurator-tab-widgets-table" :source="source"/>`,
           props: ['source']
         } : false
       },
@@ -23,8 +22,7 @@
               [this.configurator.optCfg.fields.id_parent]: this.source ? this.source.id : '',
               [this.configurator.optCfg.fields.text]: '',
               [this.configurator.optCfg.fields.code]: ''
-            },
-            widgetsComp: this.compName
+            }
           }
         })
       },
@@ -44,14 +42,12 @@
         appui.error(d.error || '');
       },
       editRow(row, col, idx){
-        let props = Object.keys(row);
-        if (!props.includes('component')) {
+        if (!!row && !!row.isContainer) {
           this.getPopup().open({
             title: bbn._('Container edition'),
             component: this.$options.components.container,
             source: {
-              row: row,
-              widgetsComp: this.compName
+              row: row
             }
           });
         }
@@ -59,33 +55,22 @@
           this.getRef('table').edit(row, {
             title: bbn._('Widget edition')
           }, idx);
+
         }
       }
     },
     created(){
-      appui.register('appui-dashboard-configurator-tab-widgets-' + this.compName, this);
+      appui.register('appui-dashboard-configurator-tab-widgets-table', this);
     },
     beforeDestroy() {
-      appui.unregister('appui-dashboard-configurator-tab-widgets-' + this.compName);
+      appui.unregister('appui-dashboard-configurator-tab-widgets-table');
     },
     components: {
       container: {
         template: `
-<bbn-form :action="widgetsComp.configurator.root + 'actions/configurator/widgets'"
-          :source="source.row"
-          :data="{
-            action: source.row[widgetsComp.configurator.optCfg.fields.id] ? 'update' : 'insert',
-            isContainer: true
-          }"
-          @success="success"
->
-  <div class="bbn-spadded bbn-grid-fields">
-    <label>` + bbn._('Text') + `</label>
-    <bbn-input v-model="source.row[widgetsComp.configurator.optCfg.fields.text]" :required="true"/>
-    <label>` + bbn._('Code') + `</label>
-    <bbn-input v-model="source.row[widgetsComp.configurator.optCfg.fields.code]"/>
-  </div>
-</bbn-form>
+<appui-dashboard-configurator-form-container :source="source"
+                                             @success="success"
+                                             @error="error"/>
         `,
         props: {
           source: {
@@ -94,18 +79,40 @@
         },
         data(){
           return {
-            widgetsComp: appui.getRegistered('appui-dashboard-configurator-tab-widgets-' + this.source.widgetsComp)
-          }
+            widgetsComp: appui.getRegistered('appui-dashboard-configurator-tab-widgets-table')
+          };
         },
         methods: {
           success(d){
-            if (d.success) {
-              this.widgetsComp.getRef('table').updateData();
-              appui.success();
-            }
-            else {
-              appui.error();
-            }
+            this.widgetsComp.editSuccess(d);
+          },
+          error(d){
+            this.widgetsComp.editFailure(d);
+          }
+        }
+      },
+      plugin: {
+        template: `
+<bbn-dropdown v-model="plugin" :source="source" :disabled="!!form.source.id || !!form.source.id_parent"/>
+        `,
+        props: ['value'],
+        data(){
+          let ddSrc = [];
+          bbn.fn.iterate(appui.plugins, (v,i) => {
+            ddSrc.push({
+              text: i,
+              value: v
+            });
+          });
+          return {
+            plugin: this.value,
+            source: ddSrc,
+            form: this.closest('bbn-form')
+          }
+        },
+        watch: {
+          plugin(newVal){
+            this.$emit('input', newVal);
           }
         }
       }

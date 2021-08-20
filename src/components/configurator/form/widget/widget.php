@@ -1,8 +1,14 @@
 <bbn-form :action=" source.url || (configurator.root + 'actions/configurator/widgets')"
           :source="source.row"
           :data="source.data"
-          @success="d => isFunction(source.success) ? source.success(d) : false">
+          @success="d => isFunction(source.success) ? source.success(d) : emitSuccess(d)"
+          @failure="emitError">
   <div class="bbn-spadded bbn-grid-fields">
+    <template v-if="!!extraFields">
+      <label><?=_('Plugin')?></label>
+      <bbn-dropdown v-model="source.row.plugin"
+                    :source="plugins"/>
+    </template>
     <label><?=_('Name')?></label>
     <bbn-input v-model="source.row[configurator.optCfg.fields.text]"
                :required="true"/>

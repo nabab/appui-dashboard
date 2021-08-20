@@ -31,6 +31,18 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     'conditions' => [[
       'field' => $model->db->cfn($pFields['id_option'], $pTable),
       'value'=> $model->inc->options->fromCode('list', 'dashboard', 'appui')
+    ], [
+      'logic' => 'OR',
+      'conditions' => [[
+        'field' => $model->db->cfn($pFields['public'], $pTable),
+        'value' => 1
+      ], [
+        'field' => $model->db->cfn($pFields['id_user'], $pTable),
+        'value' => $model->inc->user->getId()
+      ], [
+        'field' => $model->db->cfn($pFields['id_group'], $pTable),
+        'value' => $model->inc->user->getGroup()
+      ]]
     ]]
   ],
   'order' => [[

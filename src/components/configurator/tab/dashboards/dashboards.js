@@ -18,6 +18,9 @@
       },
       editFailure(d){
         appui.error(d.error || '');
+      },
+      open(row){
+        bbn.fn.link(this.configurator.root + 'test/' + row.id);
       }
     }
   }
