@@ -1,4 +1,4 @@
-<?php
+co<?php
 /**
  * Created by PhpStorm.
  * User: BBN
@@ -7,6 +7,8 @@
  */
 /** @var \bbn\Mvc\Controller $ctrl */
 /** @var \stdClass           $ctrl->obj */
+use bbn\X;
+
 $ctrl->obj->success = false;
 if (!empty($ctrl->post['key'])
   && ($idWidget = $ctrl->inc->dashboard->getWidgetOption($ctrl->post['key']) ?: $ctrl->post['key'])
@@ -14,10 +16,11 @@ if (!empty($ctrl->post['key'])
   // Fetches the permission's alias: widget in dashboard options
   /** @var \bbn\User\options $ctrl->inc->options */
   if ($info = $ctrl->inc->options->option($idWidget)) {
-    $id_perm = $info['id_alias'];
+    //$id_perm = $info['id_alias'];
+    $id_perm = $info['id_alias'] ?? $info['id'];
     $code    = $info['code'];
     if ($pref = $ctrl->inc->pref->getByOption($idWidget)) {
-      $info = \bbn\X::mergeArrays($info, $pref);
+      $info = X::mergeArrays($info, $pref);
     }
   }
   // Otherwise checking if the key is a preference
@@ -27,7 +30,8 @@ if (!empty($ctrl->post['key'])
   }
 
   if ($code && $ctrl->inc->perm->has($id_perm)) {
-    if (($perm = $ctrl->inc->options->option($id_perm))
+    // if (($perm = $ctrl->inc->options->option($id_perm))
+    if (($perm = $ctrl->inc->perm->get($id_perm))
         && ($parent = $ctrl->inc->options->option($perm['id_parent']))
         && (strpos($parent['code'], 'appui-') === 0)
         && ($parent = $ctrl->inc->options->option($parent['id_parent']))
@@ -48,7 +52,7 @@ if (!empty($ctrl->post['key'])
 
     if (\is_array($res)) {
       $ctrl->obj->success = true;
-      if (\bbn\X::isAssoc($res)) {
+      if (X::isAssoc($res)) {
         foreach ($res as $k => $r) {
           $ctrl->obj->$k = $r;
         }
