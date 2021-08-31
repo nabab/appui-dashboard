@@ -7,6 +7,7 @@
     <template v-if="!!extraFields">
       <label><?=_('Plugin')?></label>
       <bbn-dropdown v-model="source.row.plugin"
+                    :nullable="true"
                     :source="plugins"/>
     </template>
     <label><?=_('Name')?></label>
