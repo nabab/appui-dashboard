@@ -93,7 +93,7 @@
       },
       plugin: {
         template: `
-<bbn-dropdown v-model="plugin" :source="source" :disabled="!!form.source.id || !!form.source.id_parent"/>
+<bbn-dropdown v-model="plugin" :source="source" :nullable="true" :disabled="!!form.source.id || !!form.source.id_parent"/>
         `,
         props: ['value'],
         data(){

@@ -1,4 +1,4 @@
-co<?php
+<?php
 /**
  * Created by PhpStorm.
  * User: BBN
@@ -17,7 +17,7 @@ if (!empty($ctrl->post['key'])
   /** @var \bbn\User\options $ctrl->inc->options */
   if ($info = $ctrl->inc->options->option($idWidget)) {
     //$id_perm = $info['id_alias'];
-    $id_perm = $info['id_alias'] ?? $info['id'];
+    $id_perm = $ctrl->inc->perm->optionToPermission($idWidget);
     $code    = $info['code'];
     if ($pref = $ctrl->inc->pref->getByOption($idWidget)) {
       $info = X::mergeArrays($info, $pref);
@@ -30,15 +30,23 @@ if (!empty($ctrl->post['key'])
   }
 
   if ($code && $ctrl->inc->perm->has($id_perm)) {
-    // if (($perm = $ctrl->inc->options->option($id_perm))
-    if (($perm = $ctrl->inc->perm->get($id_perm))
-        && ($parent = $ctrl->inc->options->option($perm['id_parent']))
-        && (strpos($parent['code'], 'appui-') === 0)
-        && ($parent = $ctrl->inc->options->option($parent['id_parent']))
-        && ($parent['code'] === 'plugins')
-        && ($plugin = $ctrl->inc->options->code($parent['id_parent']))
-        && ($plugin = $ctrl->pluginName(substr($plugin, 0, strlen($plugin) - 1)))
+    $parents = array_reverse($ctrl->inc->options->parents($id_perm));
+    if (
+      (count($parents) > 5) &&
+      ($root_code = $ctrl->inc->options->code($parents[1])) &&
+      in_array($root_code, ['appui', 'plugins']) &&
+      ($ctrl->inc->options->code($parents[4]) === 'plugins') &&
+      ($plugin = $ctrl->inc->options->code($parents[2]))
     ) {
+      if ($root_code === 'appui') {
+        $plugin = 'appui-'.$plugin;
+      }
+      /*
+      if (X::indexOf($plugin, 'appui-') === 0) {
+        $plugin = substr($plugin, 6);
+      }
+      */
+
       $res = $ctrl->getSubpluginModel($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
     }
     elseif (!($res = $ctrl->getPluginModel($code, $ctrl->post, $ctrl->pluginUrl('appui-dashboard'), $info['cache'] ?? 0))) {
