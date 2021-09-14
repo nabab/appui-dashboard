@@ -12,9 +12,9 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
     $model->db->cfn($pFields['id_group'], $pTable),
     $model->db->cfn($pFields['id_alias'], $pTable),
     $model->db->cfn($pFields['public'], $pTable),
-    $pFields['text'] => 'IFNULL(' . $model->db->cfn($pFields['text'], 'uo') . ',' . $model->db->cfn($pFields['text'], $pTable) . ')',
+    $pFields['text'] => 'IFNULL(' . $model->db->cfn($pFields['text'], 'uo', true) . ',' . $model->db->cfn($pFields['text'], $pTable, true) . ')',
     $model->db->cfn($pFields['cfg'], $pTable),
-    'code' => 'IFNULL(' . $model->db->cfn($pFields['cfg'], 'uo') . '->>"$.code"' . ','. $model->db->cfn($pFields['cfg'], $pTable) . '->>"$.code"' . ')'
+    'code' => 'IFNULL(JSON_EXTRACT(' . $model->db->cfn($pFields['cfg'], 'uo', true) . ', "$.code")' . ', JSON_EXTRACT('. $model->db->cfn($pFields['cfg'], $pTable, true) . ', "$.code"))'
   ],
   'join' => [[
     'table' => $pTable,
