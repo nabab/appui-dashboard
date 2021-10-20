@@ -7,7 +7,7 @@ if ($model->hasData('id', true)
 ) {
   return [
     'name' => $info[$cfg['arch']['user_options']['text']],
-    'icon' => $info['icon'],
+    'icon' => $info['icon'] ?? '',
     'info' => $info,
     'widgets' => $dash->getWidgets(),
     'availableWidgets' => $model->getModel($model->pluginUrl('appui-dashboard').'/data/configurator/widgets/tree')['data']
