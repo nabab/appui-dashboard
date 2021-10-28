@@ -34,9 +34,9 @@
     <label><?=_('itemComponent')?></label>
     <bbn-input v-model="source.row.itemComponent"/>
     <label><?=_('Right buttons')?></label>
-    <bbn-json-editor v-model="source.row.rightButtons"/>
+    <bbn-json-editor v-model="source.row.buttonsRight"/>
     <label><?=_('Left buttons')?></label>
-    <bbn-json-editor v-model="source.row.leftButtons"/>
+    <bbn-json-editor v-model="source.row.buttonsLeft"/>
     <label><?=_("Component's options")?></label>
     <bbn-json-editor v-model="source.row.options"/>
     <label><?=_('Cache')?></label>
