@@ -1,8 +1,4 @@
 <?php
-/*
- * Describe what it does!
- *
- **/
 
 /** @var $this \bbn\Mvc\Model*/
 $widgets_id = $model->inc->options->fromCode('default', 'dashboard', 'appui');
