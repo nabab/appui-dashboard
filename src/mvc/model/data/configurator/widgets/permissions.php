@@ -8,6 +8,6 @@ if (!($idPerm = $model->inc->perm->optionToPermission($model->data['id']))) {
 }
 
 return $model->getModel($model->pluginUrl('appui-option') . '/permissions/actions/get', [
-  'id' => $model->data['id'],
+  'id' => $idPerm,
   'full' => 1
 ]);
