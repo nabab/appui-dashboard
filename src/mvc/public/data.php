@@ -28,15 +28,23 @@ if (!empty($ctrl->post['key'])
     $id_perm = $info['id_option'];
     $code    = $info['widget']['code'];
   }
+  // User's private widget
+  elseif ($info = $ctrl->inc->dashboard->getPvtWidget($idWidget)) {
+    $code = !empty($info['code']) ? $info['code'] : false;
+  }
 
-  if ($code && $ctrl->inc->perm->has($id_perm)) {
-    $parents = array_reverse($ctrl->inc->options->parents($id_perm));
-    if (
-      (count($parents) > 5) &&
-      ($root_code = $ctrl->inc->options->code($parents[1])) &&
-      in_array($root_code, ['appui', 'plugins']) &&
-      ($ctrl->inc->options->code($parents[4]) === 'plugins') &&
-      ($plugin = $ctrl->inc->options->code($parents[2]))
+  if (!empty($code)
+    && ($ctrl->inc->dashboard->isPvtWidget($idWidget)
+      || (!empty($id_perm)
+        && $ctrl->inc->perm->has($id_perm)))
+  ) {
+    if (!empty($id_perm)
+      && ($parents = array_reverse($ctrl->inc->options->parents($id_perm)))
+      && (count($parents) > 5)
+      && ($root_code = $ctrl->inc->options->code($parents[1]))
+      && in_array($root_code, ['appui', 'plugins'])
+      && ($ctrl->inc->options->code($parents[4]) === 'plugins')
+      && ($plugin = $ctrl->inc->options->code($parents[2]))
     ) {
       if ($root_code === 'appui') {
         $plugin = 'appui-'.$plugin;
