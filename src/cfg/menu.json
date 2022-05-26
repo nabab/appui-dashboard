@@ -8,6 +8,12 @@
       "num": 1,
       "icon": "nf nf-fa-home",
       "link": "home"
+    },
+    {
+      "text": "Configurator",
+      "num": 2,
+      "icon": "nf nf-mdi-view_dashboard",
+      "link": "page/configurator"
     }
   ]
 }
