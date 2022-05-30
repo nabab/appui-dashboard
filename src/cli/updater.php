@@ -8,5 +8,5 @@ $appui = new \bbn\Appui();
 $pref = new \bbn\User\Preferences($appui->getDb());
 $perm = new \bbn\User\Permissions();
 if ($res = $appui->updateDashboard()) {
-  echo $res . _('changes made') . PHP_EOL;
+  echo $res . ' ' . _('changes made') . PHP_EOL;
 }
