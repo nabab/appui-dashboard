@@ -226,10 +226,10 @@
         template: `
 <span>
   <span class="bbn-tree-node-block-icon">
-    <span v-if="!source.icon"/>
-    <img v-else-if="source.icon && (source.icon.indexOf('data:image') === 0)"
-          :src="source.icon">
-    <i v-else :class="source.icon"/>
+    <span v-if="!source.data.icon"/>
+    <img v-else-if="source.data.icon && (source.data.icon.indexOf('data:image') === 0)"
+          :src="source.data.icon">
+    <i v-else :class="source.data.icon"/>
   </span>
   <span class="bbn-tree-node-block-title">
     <span v-html="source.text"/>
