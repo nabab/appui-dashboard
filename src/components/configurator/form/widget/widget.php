@@ -18,6 +18,8 @@
     <label><?=_('Code')?></label>
     <bbn-input v-model="source.row[configurator.optCfg.fields.code]"
                :required="true"/>
+    <label><?=_('Icon')?></label>
+    <bbn-input v-model="source.row.icon"/>
     <label><?=_('Closable')?></label>
     <bbn-checkbox v-model="source.row.closable"
                   :value="true"
