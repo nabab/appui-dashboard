@@ -3,7 +3,9 @@ if (!$model->hasData('id', true)) {
   throw new \Exception(_("The 'id' field is mandatory"));
 }
 
-if (!($idPerm = $model->inc->perm->optionToPermission($model->data['id']))) {
+$idPerm = $model->inc->perm->optionToPermission($model->data['id'], true);
+
+if (!empty($idPerm)) {
   throw new \Exception(sprintf(_("No permission record for id: %s"), $model->data['id']));
 }
 
