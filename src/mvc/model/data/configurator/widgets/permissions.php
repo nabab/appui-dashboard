@@ -5,7 +5,7 @@ if (!$model->hasData('id', true)) {
 
 $idPerm = $model->inc->perm->optionToPermission($model->data['id'], true);
 
-if (!empty($idPerm)) {
+if (empty($idPerm)) {
   throw new \Exception(sprintf(_("No permission record for id: %s"), $model->data['id']));
 }
 
