@@ -1,18 +1,1 @@
-{
-    "mvc\/home": {
-        "Sorting saved": "",
-        "Sorting reset successfull": ""
-    },
-    "mvc\/widgets": {
-        "Add": "",
-        "New widget": "",
-        "Edit": "",
-        "Copy": "",
-        "Delete": "",
-        "New option": "",
-        "Updating option": "",
-        "Do you also want to duplicate children options?": "",
-        "Widget successfully updated": "",
-        "Widget successfully inserted": ""
-    }
-}
+{"components\/configurator\/dashboard":{"Groups":"Gruppi","Users":"Utenti","Configuration":"Configurazione","Are you sure you want to remove this widget?":"Sei sicuro di voler rimuovere questo widget?"},"mvc\/widgets":{"Edit":"Modifica","Delete":"Elimina","New widget":"Nuovo widget","Copy":"Copia","Add":"Aggiungi","New option":"Nuova opzione","Updating option":"Aggiornamento opzione","Do you also want to duplicate children options?":"Vuoi anche duplicare le opzioni figlie?","Widget successfully updated":"Widget aggiornato con successo","Widget successfully inserted":"Widget inserito con successo"},"components\/configurator\/tab\/widgets\/tree":{"Delete":"Elimina","New container":"Nuovo contenitore","Add container":"Aggiungi contenitore","Add widget":"Aggiungi widget","Copy":"Copia","Duplicate":"Duplica","Paste":"Incolla","Are you sure you want to delete this item?":"Sei sicuro di voler eliminare questo elemento?"},"components\/configurator\/tab\/widgets\/table":{"New container":"Nuovo contenitore","Container edition":"Modifica del contenitore","Widget edition":"Modifica del widget"},"mvc\/home":{"Sorting saved":"Ordine salvato","Sorting reset successfull":"Ordine reimpostato con successo"},"mvc\/home_alt":{"Sorting saved":"Ordine salvato","Sorting reset successfull":"Ordine reimpostato con successo"},"mvc\/test":{"Sorting saved":"Ordine salvato","Sorting reset successfull":"Ordine reimpostato con successo"}}

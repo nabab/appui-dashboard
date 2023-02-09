@@ -1,0 +1,376 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: info@bbn.so\n"
+"last-Translator: BBN Solutions <support@bbn.solutions>\n"
+"Language-Team: EN <EN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-02-09 13:08+0100\n"
+"POT-Revision-Date: 2023-02-09 13:08+0100\n"
+"Language: en\n"
+"X-Domain: appui-dashboard51\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/cli/updater.php
+msgid "changes made"
+msgstr "changes made"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/configurator.php
+msgid "Dashboards"
+msgstr "Dashboards"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/configurator.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/widgets.php
+msgid "Widgets"
+msgstr "Widgets"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/configurator.php
+msgid "List"
+msgstr "List"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/configurator.php
+msgid "Tree"
+msgstr "Tree"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.js
+msgid "Groups"
+msgstr "Groups"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.js
+msgid "Users"
+msgstr "Users"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.js
+msgid "Configuration"
+msgstr "Configuration"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.js
+msgid "Are you sure you want to remove this widget?"
+msgstr "Are you sure you want to remove this widget?"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "WIDGETS"
+msgstr "Widgets"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "AVAILABLE WIDGETS"
+msgstr "AVAILABLE WIDGETS"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "INFO"
+msgstr "Info"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+msgid "Name"
+msgstr "Name"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/container/container.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Code"
+msgstr "Code"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "Public"
+msgstr "Public"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "User"
+msgstr "User"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "Group"
+msgstr "Group"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "WIDGET CONFIGURATION"
+msgstr "WIDGET CONFIGURATION"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "Widget"
+msgstr "Widget"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "Select a widget..."
+msgstr "Select a widget..."
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/dashboard/dashboard.php
+msgid "Permissions"
+msgstr "Permissions"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/container/container.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Text"
+msgstr "Text"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+msgid "Plugin"
+msgstr "Plugin"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+msgid "URL"
+msgstr "URL"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+msgid "Icon"
+msgstr "Icon"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Closable"
+msgstr "Closable"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Observe"
+msgstr "Observe"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Limit"
+msgstr "Limit"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Component"
+msgstr "Component"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "itemComponent"
+msgstr "itemComponent"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Right buttons"
+msgstr "Right buttons"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Left buttons"
+msgstr "Left buttons"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Component's options"
+msgstr "Component's options"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/form/widget/widget.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+msgid "Cache"
+msgstr "Cache"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "New"
+msgstr "New"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+msgid "ID"
+msgstr "ID"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "See"
+msgstr "See"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+msgid "Configure"
+msgstr "Configure"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Edit"
+msgstr "Edit"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/dashboards/dashboards.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Delete"
+msgstr "Delete"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+msgid "New container"
+msgstr "New container"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.js
+msgid "Container edition"
+msgstr "Container edition"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.js
+msgid "Widget edition"
+msgstr "Widget edition"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "New widget"
+msgstr "New widget"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "Add container"
+msgstr "Add container"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+msgid "ID parent"
+msgstr "ID parent"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "Add widget"
+msgstr "Add widget"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Copy"
+msgstr "Copy"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+msgid "Duplicate"
+msgstr "Duplicate"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+msgid "Paste"
+msgstr "Paste"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.js
+msgid "Are you sure you want to delete this item?"
+msgstr "Are you sure you want to delete this item?"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "Refresh"
+msgstr "Refresh"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "Select a widget"
+msgstr "Select a widget"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "or create a new one"
+msgstr "or create a new one"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Num"
+msgstr "Num"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Actions"
+msgstr "Actions"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
+msgid "Alias"
+msgstr "Alias"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/home.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/home_alt.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/test.js
+msgid "Sorting saved"
+msgstr "Sorting saved"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/home.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/home_alt.js
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/test.js
+msgid "Sorting reset successfull"
+msgstr "Sorting reset successfull"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Add"
+msgstr "Add"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "New option"
+msgstr "New option"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Updating option"
+msgstr "Updating option"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Do you also want to duplicate children options?"
+msgstr "Do you also want to duplicate children options?"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Widget successfully updated"
+msgstr "Widget successfully updated"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
+msgid "Widget successfully inserted"
+msgstr "Widget successfully inserted"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/widgets.php
+msgid "The %s property is mandatory"
+msgstr "The %s property is mandatory"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/add.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/move.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/remove.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/update.php
+msgid "The dashboard's id is mandatory"
+msgstr "The dashboard's id is mandatory"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/add.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/move.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/remove.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/update.php
+msgid "The widget's id is mandatory"
+msgstr "The widget's id is mandatory"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/actions/configurator/dashboard/widget/move.php
+msgid "The 'num' property is mandatory"
+msgstr "The 'num' property is mandatory"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/data/configurator/widgets/permissions.php
+msgid "The 'id' field is mandatory"
+msgstr "The 'id' field is mandatory"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/model/data/configurator/widgets/permissions.php
+msgid "No permission record for id: %s"
+msgstr "No permission record for id: %s"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/actions.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/test/actions.php
+msgid "Wrong action"
+msgstr "Wrong action"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/actions.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/test/actions.php
+msgid "Wrong URL"
+msgstr "Wrong URL"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/home.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/home_alt.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/test.php
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/page.php
+msgid "Dashboards configurator"
+msgstr "Dashboards configurator"
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/public/plugins.php
+msgid "Automated plugins dashboard"
+msgstr "Automated plugins dashboard"
