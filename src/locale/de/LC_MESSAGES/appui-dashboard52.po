@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: info@bbn.so\n"
 "last-Translator: BBN Solutions <support@bbn.solutions>\n"
-"Language-Team: ES <ES@li.org>\n"
+"Language-Team: DE <DE@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-09 13:08+0100\n"
-"POT-Revision-Date: 2023-02-09 13:08+0100\n"
-"Language: es\n"
-"X-Domain: appui-dashboard51\n"
+"POT-Creation-Date: 2023-02-10 18:50+0100\n"
+"POT-Revision-Date: 2023-02-10 18:50+0100\n"
+"Language: de\n"
+"X-Domain: appui-dashboard52\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/cli/updater.php
@@ -225,6 +225,7 @@ msgid "Widget edition"
 msgstr ""
 
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/table/table.php
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/js/widgets.js
 msgid "New widget"
 msgstr ""
@@ -271,6 +272,10 @@ msgstr ""
 
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
 msgid "or create a new one"
+msgstr ""
+
+#: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/components/configurator/tab/widgets/tree/tree.php
+msgid "No text"
 msgstr ""
 
 #: /home/okrim/_COMPOSER/dev/vendor/bbn/appui-dashboard/src/mvc/html/widgets.php
