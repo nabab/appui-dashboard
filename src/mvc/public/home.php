@@ -1,5 +1,5 @@
 <?php
-setlocale(LC_ALL, 'fr_FR');
+//setlocale(LC_ALL, 'fr_FR');
 //$ctrl->obj->url = $ctrl->pluginUrl('appui-dashboard');
 
 
