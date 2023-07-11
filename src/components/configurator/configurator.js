@@ -1,35 +1,4 @@
 (() => {
-  let mixins = [{
-    data(){
-      return {
-        _configurator: null
-      }
-    },
-    computed:{
-      configurator(){
-        return this._configurator;
-      },
-    },
-    methods: bbn.fn.extend({
-      find: bbn.vue.find,
-      findAll: bbn.vue.findAll,
-      getRow: bbn.fn.getRow,
-      getField: bbn.fn.getField
-    }, appui.app.$options.methods),
-    beforeMount(){
-      this._configurator = this.closest('appui-dashboard-configurator');
-    }
-  }];
-  bbn.vue.addPrefix('appui-dashboard-configurator-', (tag, resolve, reject) => {
-    return bbn.vue.queueComponent(
-      tag,
-      appui.plugins['appui-dashboard'] + '/components/configurator/' + bbn.fn.replaceAll('-', '/', tag).substr('appui-dashboard-configurator-'.length),
-      mixins,
-      resolve,
-      reject
-    );
-  });
-
   return {
     props: ['source'],
     data(){
@@ -47,6 +16,27 @@
         fields: this.source.prefCfg.arch.user_options_bits
       };
       return d;
+    },
+    created() {
+      let config = this;
+      let mixins = [{
+        mixins: [bbn.cp.mixins.basic],
+        data(){
+          return {
+            _configurator: config
+          }
+        },
+        computed:{
+          configurator(){
+            return this._configurator;
+          },
+        },
+        methods: {
+          getRow: bbn.fn.getRow,
+          getField: bbn.fn.getField
+        }
+      }];
+      bbn.cp.addPrefix('appui-dashboard-configurator-', null, mixins);
     }
   };
 })();

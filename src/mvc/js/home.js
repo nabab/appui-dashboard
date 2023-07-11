@@ -1,7 +1,8 @@
 // Javascript Document
 (() => {
   return {
-    data(){
+    data() {
+      //bbn.fn.log("DATA", this.source, this.$props, this.$options.name);
       return {
         root: appui.plugins['appui-dashboard'] + '/',
         widgets: this.source.widgets
