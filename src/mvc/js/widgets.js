@@ -53,7 +53,7 @@
             notext: true
           });
         }*/
-        bbn.fn.log(res)
+        //bbn.fn.log(res)
         return res;
       },
       insert() {
