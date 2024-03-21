@@ -8,47 +8,47 @@
              :data="{id_parent:source.list.id}"
   >
     <bbns-column field="num"
-                title="<?=_('Num')?>" 
+                title="<?= _('Num') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="text"
-                title="<?=_('Text')?>" 
+                title="<?= _('Text') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="code"
-                title="<?=_('Code')?>" 
+                title="<?= _('Code') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="closable"
-                title="<?=_('Closable')?>" 
+                title="<?= _('Closable') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="observe"
-                title="<?=_('Observe')?>" 
+                title="<?= _('Observe') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="component"
-                title="<?=_('Component')?>" 
+                title="<?= _('Component') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="itemComponent"
-                title="<?=_('itemComponent')?>" 
+                title="<?= _('itemComponent') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="alias"
                  :render="renderAlias"              
-                 title="<?=_('itemComponent')?>" 
+                 title="<?= _('itemComponent') ?>" 
     >
     </bbns-column>
     <bbns-column :width="180"
-                 ftitle="<?=_('Actions')?>"
+                 ftitle="<?= _('Actions') ?>"
                  :editable="false"
                  :buttons="renderButtons"
                  cls="bbn-c"
@@ -66,39 +66,39 @@
   >
     <div class="bbn-grid-fields bbn-padded">
       
-      <div><?=_('Text')?></div>
+      <div><?= _('Text') ?></div>
       <bbn-input v-model="source.row.text"></bbn-input>
       
-      <div><?=_('Code')?></div>
+      <div><?= _('Code') ?></div>
       <bbn-input v-model="source.row.code"></bbn-input>
       
-      <div><?=_('Closable')?></div>
+      <div><?= _('Closable') ?></div>
       <bbn-checkbox v-model="source.row.closable" :value="1"></bbn-checkbox>
 
-      <div><?=_('Observe')?></div>
+      <div><?= _('Observe') ?></div>
       <bbn-checkbox v-model="source.row.observe" :value="1"></bbn-checkbox>
 
-      <div><?=_('Component')?></div>
+      <div><?= _('Component') ?></div>
       <bbn-input v-model="source.row.component"></bbn-input>  
       
-      <div><?=_('itemComponent')?></div>
+      <div><?= _('itemComponent') ?></div>
       <bbn-input v-model="source.row.itemComponent"></bbn-input>
 
 
-      <div><?=_('Limit')?></div>
+      <div><?= _('Limit') ?></div>
       <bbn-numeric v-model="source.row.limit"></bbn-numeric>
 
-      <div><?=_('Right buttons')?></div>
+      <div><?= _('Right buttons') ?></div>
       <bbn-json-editor v-model="source.row.buttonsRight" mode="tree"></bbn-json-editor>
 
-      <div><?=_('Left buttons')?></div>
+      <div><?= _('Left buttons') ?></div>
       <bbn-json-editor v-model="source.row.buttonsLeft" mode="tree"></bbn-json-editor>
 
-      <div><?=_('Component\'s options')?></div>
+      <div><?= _('Component\'s options') ?></div>
       <bbn-json-editor v-model="source.row.componentOptions" mode="tree"></bbn-json-editor>
       
 
-      <div><?=_('Alias')?></div>
+      <div><?= _('Alias') ?></div>
       <bbn-input v-model="source.row.alias.text"></bbn-input>
 
       

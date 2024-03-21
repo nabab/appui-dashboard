@@ -5,11 +5,11 @@
            :filterable="true"
            editable="popup"
            :toolbar="[{
-             text: '<?=_('New widget')?>',
+             text: '<?= _('New widget') ?>',
              action: 'insert',
              icon: 'nf nf-fa-plus'
            }, {
-             text: '<?=_('Add container')?>',
+             text: '<?= _('Add container') ?>',
              action: addContainer,
              icon: 'nf nf-mdi-folder_plus'
            }]"
@@ -20,32 +20,32 @@
            @editSuccess="editSuccess"
            @editFailure="editFailure">
   <bbns-column :field="configurator.optCfg.fields.id"
-               title="<?=_('ID')?>"
+               title="<?= _('ID') ?>"
                :hidden="true"
                :editable="false"/>
   <bbns-column :field="configurator.optCfg.fields.id_parent"
-               title="<?=_('ID parent')?>"
+               title="<?= _('ID parent') ?>"
                :hidden="true"
                :editable="false"
                :default="source ? source.id : null"/>
   <bbns-column field="plugin"
-               title="<?=_('Plugin')?>"
+               title="<?= _('Plugin') ?>"
                :hidden="true"
                :editable="true"
                :default="defaultPlugin"
                :editor="$options.components.plugin"/>
   <bbns-column :field="configurator.optCfg.fields.text"
-               title="<?=_('Name')?>"
+               title="<?= _('Name') ?>"
                :options="{
                  required: true
                }"/>
   <bbns-column :field="configurator.optCfg.fields.code"
-               title="<?=_('Code')?>"
+               title="<?= _('Code') ?>"
                :options="{
                  required: true
                }"/>
   <bbns-column field="closable"
-               title="<?=_('Closable')?>"
+               title="<?= _('Closable') ?>"
                type="boolean"
                :width="70"
                :options="{
@@ -57,7 +57,7 @@
                :render="renderClosable"
                editor="bbn-checkbox"/>
   <bbns-column field="observe"
-               title="<?=_('Observe')?>"
+               title="<?= _('Observe') ?>"
                type="boolean"
                :width="70"
                :options="{
@@ -69,35 +69,35 @@
                :render="renderObserve"
                editor="bbn-checkbox"/>
   <bbns-column field="component"
-               title="<?=_('Component')?>"/>
+               title="<?= _('Component') ?>"/>
   <bbns-column field="itemComponent"
-               title="<?=_('itemComponent')?>"/>
+               title="<?= _('itemComponent') ?>"/>
   <bbns-column field="limit"
-               title="<?=_('Limit')?>"
+               title="<?= _('Limit') ?>"
                type="number"
                :default="5"/>
   <bbns-column field="rightButtons"
-               title="<?=_('Right buttons')?>"
+               title="<?= _('Right buttons') ?>"
                type="json"
                default="[]"/>
   <bbns-column field="leftButtons"
-               title="<?=_('Left buttons')?>"
+               title="<?= _('Left buttons') ?>"
                type="json"
                default="[]"/>
   <bbns-column field="options"
-               title="<?=_("Component's options")?>"
+               title="<?= _("Component's options") ?>"
                type="json"
                default="{}"/>
   <bbns-column field="cache"
-               title="<?=_('Cache')?>"
+               title="<?= _('Cache') ?>"
                type="number"/>
   <bbns-column :buttons="[{
-                 text: '<?=_('Edit')?>',
+                 text: '<?= _('Edit') ?>',
                  action: editRow,
                  icon: 'nf nf-fa-edit',
                  notext: true
                }, {
-                 text: '<?=_('Delete')?>',
+                 text: '<?= _('Delete') ?>',
                  action: 'delete',
                  icon: 'nf nf-fa-trash',
                  notext: true

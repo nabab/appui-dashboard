@@ -8,10 +8,10 @@
           @error="error"
 >
   <div class="bbn-spadded bbn-grid-fields">
-    <label><?=_('Text')?></label>
+    <label><?= _('Text') ?></label>
     <bbn-input v-model="source.row[configurator.optCfg.fields.text]"
                :required="true"/>
-    <label><?=_('Code')?></label>
+    <label><?= _('Code') ?></label>
     <bbn-input v-model="source.row[configurator.optCfg.fields.code]"/>
   </div>
 </bbn-form>

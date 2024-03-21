@@ -3,18 +3,18 @@
     <bbn-pane :size="300">
       <div class="bbn-overlay bbn-flex-height bbn-bordered-right">
         <div class="appui-dashboard-configurator-tab-widgets-tree-header bbn-header bbn-spadded bbn-b bbn-no-border-right bbn-flex-width bbn-vmiddle">
-          <div class="bbn-flex-fill bbn-middle"><?=_('WIDGETS')?></div>
+          <div class="bbn-flex-fill bbn-middle"><?= _('WIDGETS') ?></div>
           <div>
             <bbn-button icon="nf nf-fa-plus"
-                        text="<?=_('Add widget')?>"
+                        text="<?= _('Add widget') ?>"
                         :notext="true"
                         @click="addWidget"/>
             <bbn-button icon="nf nf-mdi-folder_plus"
-                        text="<?=_('Add container')?>"
+                        text="<?= _('Add container') ?>"
                         :notext="true"
                         @click="addContainer"/>
             <bbn-button icon="nf nf-fa-refresh"
-                        text="<?=_('Refresh')?>"
+                        text="<?= _('Refresh') ?>"
                         :notext="true"
                         @click="getRef('tree').updateData()"/>
           </div>
@@ -56,7 +56,7 @@
           <div v-else
                class="bbn-overlay bbn-middle">
             <div class="nf nf-fa-long_arrow_left bbn-xxxl bbn-right-space"></div>
-            <div class="bbn-upper bbn-lg"><?=_('Select a widget')?><br><?=_('or create a new one')?></div>
+            <div class="bbn-upper bbn-lg"><?= _('Select a widget')?><br><?=_('or create a new one') ?></div>
           </div>
         </div>
       </div>
