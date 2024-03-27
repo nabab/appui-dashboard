@@ -74,7 +74,7 @@
           <bbn-router :autoload="true"
                       :nav="true">
             <bbn-container url="widget"
-                          :static="true"
+                          :fixed="true"
                           title="<?= _('Widget') ?>"
                           icon="nf nf-fa-th_list">
               <appui-dashboard-configurator-form-widget :source="{
@@ -94,7 +94,7 @@
               </div>
             </bbn-container>
             <bbn-container url="permissions"
-                          :static="true"
+                          :fixed="true"
                           title="<?= _('Permissions') ?>"
                           icon="nf nf-fa-key">
               <div class="bbn-overlay bbn-bordered"

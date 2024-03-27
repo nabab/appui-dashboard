@@ -3,7 +3,7 @@
             :nav="true">
   <bbn-container url="dashboards"
                  title="<?= _('Dashboards') ?>"
-                 :static="true"
+                 :fixed="true"
                  component="appui-dashboard-configurator-tab-dashboards"
                  icon="nf nf-oct-dashboard"
                  :notext="true"
@@ -11,7 +11,7 @@
                  fcolor="white"/>
   <bbn-container url="widgets"
                  title="<?= _('Widgets') ?>"
-                 :static="true"
+                 :fixed="true"
                  icon="nf nf-mdi-widgets"
                  :notext="true"
                  bcolor="skyblue"
@@ -19,14 +19,14 @@
   	<bbn-router :nav="true">
       <bbn-container url="list"
                      title="<?= _('List') ?>"
-                     :static="true"
+                     :fixed="true"
                      component="appui-dashboard-configurator-tab-widgets-table"
                      icon="nf nf-fa-list"
                      bcolor="skyblue"
                      fcolor="white"/>
       <bbn-container url="tree"
                      title="<?= _('Tree') ?>"
-                     :static="true"
+                     :fixed="true"
                      component="appui-dashboard-configurator-tab-widgets-tree"
                      icon="nf nf-mdi-file_tree"
                      bcolor="skyblue"
