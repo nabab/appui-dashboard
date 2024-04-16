@@ -17,8 +17,8 @@
            :scrollable="!source"
            :url="configurator.root + 'actions/configurator/widgets'"
            ref="table"
-           @editSuccess="editSuccess"
-           @editFailure="editFailure">
+           @editsuccess="editSuccess"
+           @editfailure="editFailure">
   <bbns-column :field="configurator.optCfg.fields.id"
                title="<?= _('ID') ?>"
                :hidden="true"

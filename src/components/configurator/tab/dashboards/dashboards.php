@@ -9,8 +9,8 @@
            }]"
            ref="table"
            :url="configurator.root + 'actions/configurator/dashboard/action'"
-           @editSuccess="editSuccess"
-           @editFailure="editFailure"
+           @editsuccess="editSuccess"
+           @editfailure="editFailure"
            :auto-reset="true">
   <bbns-column :field="configurator.prefCfg.fields.id"
                title="<?= _('ID') ?>"
