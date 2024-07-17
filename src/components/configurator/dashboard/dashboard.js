@@ -32,7 +32,7 @@
         };
       },
       permsUsers(){
-        return this.configurator ? bbn.fn.map(bbn.fn.clone(this.configurator.users), u => {
+        return this.configurator ? bbn.fn.map(this.configurator.users, u => {
           return {
             id: u.value,
             username: u.text
@@ -40,7 +40,7 @@
         }) : [];
       },
       permsGroups(){
-        return this.configurator ? bbn.fn.map(bbn.fn.clone(this.configurator.groups), g => {
+        return this.configurator ? bbn.fn.map(this.configurator.groups, g => {
           return {
             id: g.value,
             group: g.text
