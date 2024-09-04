@@ -1,5 +1,6 @@
 (() => {
   return {
+    mixins: [bbn.cp.mixins.basic],
     props: {
       source: {
         type: Object
@@ -180,6 +181,7 @@
      @click="addWidget"/>
 </span>
         `,
+        mixins: [bbn.cp.mixins.basic],
         props: {
           source: {
             type: Object
@@ -238,6 +240,7 @@
      @click.prevent.stop="removeWidget"/>
 </span>
         `,
+        mixins: [bbn.cp.mixins.basic],
         props: {
           source: {
             type: Object
