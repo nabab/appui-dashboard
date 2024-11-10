@@ -1,7 +1,7 @@
 <?php
 use bbn\X;
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 $ok = true;
 if (!defined('APPUI_DASHBOARD_ROOT')) {
   define('APPUI_DASHBOARD_ROOT', $ctrl->pluginUrl('appui-dashboard').'/');

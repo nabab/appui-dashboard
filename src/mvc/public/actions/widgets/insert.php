@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;
 if ( isset($ctrl->post['id_parent']) ){
   die(var_dump($ctrl->post['id_parent']));
