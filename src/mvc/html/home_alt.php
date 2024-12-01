@@ -1,5 +1,5 @@
 <div class="bbn-overlay bbn-flex-height">
-  <div class="bbn-w-100 bbn-spadded bbn-c">
+  <div class="bbn-w-100 bbn-spadding bbn-c">
     <bbn-dropdown :source="dashboards"
                   v-model="currentDashboard"/>
   </div>

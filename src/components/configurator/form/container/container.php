@@ -7,7 +7,7 @@
           @success="success"
           @error="error"
 >
-  <div class="bbn-spadded bbn-grid-fields">
+  <div class="bbn-spadding bbn-grid-fields">
     <label><?= _('Text') ?></label>
     <bbn-input v-model="source.row[configurator.optCfg.fields.text]"
                :required="true"/>

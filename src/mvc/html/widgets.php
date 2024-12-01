@@ -64,7 +64,7 @@
             :data="source.data"
             
   >
-    <div class="bbn-grid-fields bbn-padded">
+    <div class="bbn-grid-fields bbn-padding">
       
       <div><?= _('Text') ?></div>
       <bbn-input v-model="source.row.text"></bbn-input>

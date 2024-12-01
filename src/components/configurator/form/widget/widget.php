@@ -5,7 +5,7 @@
           @success="d => isFunction(source.success) ? source.success(d) : emitSuccess(d)"
           :scrollable="true"
           @failure="emitError">
-  <div class="bbn-spadded bbn-grid-fields">
+  <div class="bbn-spadding bbn-grid-fields">
     <template v-if="!!extraFields && !source.row[configurator.optCfg.fields.id]">
       <label><?= _('Plugin') ?></label>
       <bbn-dropdown v-model="source.row.plugin"

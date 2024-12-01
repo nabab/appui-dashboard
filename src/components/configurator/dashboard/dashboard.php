@@ -1,12 +1,12 @@
 <!-- HTML Document -->
 <div class="bbn-overlay appui-dashboard-configurator-dashboard">
   <bbn-splitter orientation="horizontal">
-    <bbn-pane :size="350" class="bbn-bordered-right">
+    <bbn-pane :size="350" class="bbn-border-right">
       <bbn-splitter orientation="vertical">
         <bbn-pane>
           <!-- Used widgets -->
           <div class="bbn-flex-height">
-            <div class="bbn-header bbn-spadded bbn-b bbn-c bbn-no-border-right bbn-no-border-top"><?= _('WIDGETS') ?></div>
+            <div class="bbn-header bbn-spadding bbn-b bbn-c bbn-no-border-right bbn-no-border-top"><?= _('WIDGETS') ?></div>
             <div class="bbn-flex-fill">
               <bbn-tree :source="source.widgets"
                         uid="id"
@@ -22,7 +22,7 @@
         <bbn-pane>
           <!-- Available widgets -->
           <div class="bbn-flex-height">
-            <div class="bbn-flex-width bbn-header bbn-spadded bbn-vmiddle bbn-no-border-right">
+            <div class="bbn-flex-width bbn-header bbn-spadding bbn-vmiddle bbn-no-border-right">
               <div class="bbn-flex-fill bbn-b bbn-c"><?= _('AVAILABLE WIDGETS') ?></div>
               <i class="bbn-p nf nf-fa-refresh"
                 @click="refreshAvailableWidgets"/>
@@ -44,13 +44,13 @@
     </bbn-pane>
     <bbn-pane>
       <div class="bbn-overlay bbn-flex-height">
-        <div class="bbn-header bbn-spadded bbn-b bbn-c bbn-no-border-left bbn-no-border-top"><?= _('INFO') ?></div>
+        <div class="bbn-header bbn-spadding bbn-b bbn-c bbn-no-border-left bbn-no-border-top"><?= _('INFO') ?></div>
         <bbn-form :action="configurator.root + 'actions/configurator/dashboards'"
                   :data="{action: 'update'}"
                   :source="source.info"
                   v-if="configurator"
                   @success="infoSaved">
-          <div class="bbn-spadded bbn-grid-fields">
+          <div class="bbn-spadding bbn-grid-fields">
             <label><?= _('Name') ?></label>
             <bbn-input v-model="source.info[configurator.prefCfg.fields.text]"/>
             <label><?= _('Code') ?></label>
@@ -69,7 +69,7 @@
                           :nullable="true"/>
           </div>
         </bbn-form>
-        <div class="bbn-header bbn-spadded bbn-b bbn-c bbn-no-border-left bbn-no-border-top bbn-top-sspace"><?= _('WIDGET CONFIGURATION') ?></div>
+        <div class="bbn-header bbn-spadding bbn-b bbn-c bbn-no-border-left bbn-no-border-top bbn-top-sspace"><?= _('WIDGET CONFIGURATION') ?></div>
         <div class="appui-dashboard-configurator-dashboard-tabs bbn-flex-fill">
           <bbn-router :autoload="true"
                       :nav="true">
@@ -97,7 +97,7 @@
                           :fixed="true"
                           title="<?= _('Permissions') ?>"
                           icon="nf nf-fa-key">
-              <div class="bbn-overlay bbn-bordered"
+              <div class="bbn-overlay bbn-border"
                   v-if="selectedWidget">
                 <bbn-panelbar class="bbn-100"
                               :flex="true"
