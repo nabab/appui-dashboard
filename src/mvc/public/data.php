@@ -39,16 +39,15 @@ if (!empty($ctrl->post['key'])
         && $ctrl->inc->perm->has($id_perm)))
   ) {
     if (!empty($id_perm)
-      && ($id_plugin = $ctrl->inc->options->getParentPlugin($id_perm))
+      && ($id_subplugin = $ctrl->inc->options->getParentSubplugin($id_perm))
     ) {
-      $plugin = $ctrl->inc->options->getPluginName($id_plugin);
+      $subplugin = $ctrl->inc->options->getSubpluginName($id_subplugin);
       /*
       if (X::indexOf($plugin, 'appui-') === 0) {
         $plugin = substr($plugin, 6);
       }
       */
-
-      $res = $ctrl->getSubpluginModel($code, $ctrl->post, $plugin, 'appui-dashboard', $info['cache'] ?? 0);
+      $res = $ctrl->getSubpluginModel($code, $ctrl->post, $subplugin, 'appui-dashboard', $info['cache'] ?? 0);
     }
     elseif (!($res = $ctrl->getPluginModel($code, $ctrl->post, $ctrl->pluginUrl('appui-dashboard'), $info['cache'] ?? 0))) {
       if (!empty($info['cache'])) {
