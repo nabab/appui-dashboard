@@ -39,16 +39,9 @@ if (!empty($ctrl->post['key'])
         && $ctrl->inc->perm->has($id_perm)))
   ) {
     if (!empty($id_perm)
-      && ($parents = array_reverse($ctrl->inc->options->parents($id_perm)))
-      && (count($parents) > 5)
-      && ($root_code = $ctrl->inc->options->code($parents[1]))
-      && in_array($root_code, ['appui', 'plugins'])
-      && ($ctrl->inc->options->code($parents[4]) === 'plugins')
-      && ($plugin = $ctrl->inc->options->code($parents[2]))
+      && ($id_plugin = $ctrl->inc->options->getParentPlugin($id_perm))
     ) {
-      if ($root_code === 'appui') {
-        $plugin = 'appui-'.$plugin;
-      }
+      $plugin = $ctrl->inc->options->getPluginName($id_plugin);
       /*
       if (X::indexOf($plugin, 'appui-') === 0) {
         $plugin = substr($plugin, 6);
