@@ -13,27 +13,27 @@
            @editfailure="editFailure"
            :auto-reset="true">
   <bbns-column :field="configurator.prefCfg.fields.id"
-               title="<?= _('ID') ?>"
+               label="<?= _('ID') ?>"
                :hidden="true"/>
   <bbns-column :field="configurator.prefCfg.fields.text"
-               title="<?= _('Name') ?>"
+               label="<?= _('Name') ?>"
                :render="renderText"/>
   <bbns-column field="code"
-               title="<?= _('Code') ?>"
+               label="<?= _('Code') ?>"
                :render="renderCode"/>
   <bbns-column :field="configurator.prefCfg.fields.public"
-               title="<?= _('Public') ?>"
+               label="<?= _('Public') ?>"
                type="boolean"
                :width="60"
                cls="bbn-c"/>
   <bbns-column :field="configurator.prefCfg.fields.id_user"
-               title="<?= _('User') ?>"
+               label="<?= _('User') ?>"
                :source="configurator.users"
                :options="{
                  nullable: true
                }"/>
   <bbns-column :field="configurator.prefCfg.fields.id_group"
-               title="<?= _('Group') ?>"
+               label="<?= _('Group') ?>"
                :source="configurator.groups"
                :options="{
                  nullable: true

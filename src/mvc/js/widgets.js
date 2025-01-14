@@ -13,7 +13,7 @@
       },
       insert() {
         this.$refs.table.insert({}, {
-          title: bbn._('New widget'),
+          label: bbn._('New widget'),
           height: '90%',
           width: 800
         });
@@ -58,14 +58,14 @@
       },
       insert() {
         this.$refs.table.insert({}, {
-          title: bbn._('New option'),
+          label: bbn._('New option'),
           height: '90%',
           width: 800
         });
       },
       edit(row, col, idx) {
         this.$refs.table.edit(row, {
-          title: bbn._('Updating option') + ' "' + row.text + '"',
+          label: bbn._('Updating option') + ' "' + row.text + '"',
           height: '90%',
           width: 800
         }, idx);

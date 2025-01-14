@@ -20,32 +20,32 @@
            @editsuccess="editSuccess"
            @editfailure="editFailure">
   <bbns-column :field="configurator.optCfg.fields.id"
-               title="<?= _('ID') ?>"
+               label="<?= _('ID') ?>"
                :hidden="true"
                :editable="false"/>
   <bbns-column :field="configurator.optCfg.fields.id_parent"
-               title="<?= _('ID parent') ?>"
+               label="<?= _('ID parent') ?>"
                :hidden="true"
                :editable="false"
                :default="source ? source.id : null"/>
   <bbns-column field="plugin"
-               title="<?= _('Plugin') ?>"
+               label="<?= _('Plugin') ?>"
                :hidden="true"
                :editable="true"
                :default="defaultPlugin"
                :editor="$options.components.plugin"/>
   <bbns-column :field="configurator.optCfg.fields.text"
-               title="<?= _('Name') ?>"
+               label="<?= _('Name') ?>"
                :options="{
                  required: true
                }"/>
   <bbns-column :field="configurator.optCfg.fields.code"
-               title="<?= _('Code') ?>"
+               label="<?= _('Code') ?>"
                :options="{
                  required: true
                }"/>
   <bbns-column field="closable"
-               title="<?= _('Closable') ?>"
+               label="<?= _('Closable') ?>"
                type="boolean"
                :width="70"
                :options="{
@@ -57,7 +57,7 @@
                :render="renderClosable"
                editor="bbn-checkbox"/>
   <bbns-column field="observe"
-               title="<?= _('Observe') ?>"
+               label="<?= _('Observe') ?>"
                type="boolean"
                :width="70"
                :options="{
@@ -69,27 +69,27 @@
                :render="renderObserve"
                editor="bbn-checkbox"/>
   <bbns-column field="component"
-               title="<?= _('Component') ?>"/>
+               label="<?= _('Component') ?>"/>
   <bbns-column field="itemComponent"
-               title="<?= _('itemComponent') ?>"/>
+               label="<?= _('itemComponent') ?>"/>
   <bbns-column field="limit"
-               title="<?= _('Limit') ?>"
+               label="<?= _('Limit') ?>"
                type="number"
                :default="5"/>
   <bbns-column field="rightButtons"
-               title="<?= _('Right buttons') ?>"
+               label="<?= _('Right buttons') ?>"
                type="json"
                default="[]"/>
   <bbns-column field="leftButtons"
-               title="<?= _('Left buttons') ?>"
+               label="<?= _('Left buttons') ?>"
                type="json"
                default="[]"/>
   <bbns-column field="options"
-               title="<?= _("Component's options") ?>"
+               label="<?= _("Component's options") ?>"
                type="json"
                default="{}"/>
   <bbns-column field="cache"
-               title="<?= _('Cache') ?>"
+               label="<?= _('Cache') ?>"
                type="number"/>
   <bbns-column :buttons="[{
                  text: '<?= _('Edit') ?>',

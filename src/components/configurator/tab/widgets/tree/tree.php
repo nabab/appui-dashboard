@@ -6,15 +6,15 @@
           <div class="bbn-flex-fill bbn-middle"><?= _('WIDGETS') ?></div>
           <div>
             <bbn-button icon="nf nf-fa-plus"
-                        text="<?= _('Add widget') ?>"
+                        label="<?= _('Add widget') ?>"
                         :notext="true"
                         @click="addWidget"/>
             <bbn-button icon="nf nf-mdi-folder_plus"
-                        text="<?= _('Add container') ?>"
+                        label="<?= _('Add container') ?>"
                         :notext="true"
                         @click="addContainer"/>
             <bbn-button icon="nf nf-fa-refresh"
-                        text="<?= _('Refresh') ?>"
+                        label="<?= _('Refresh') ?>"
                         :notext="true"
                         @click="getRef('tree').updateData()"/>
           </div>

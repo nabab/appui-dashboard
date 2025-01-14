@@ -154,8 +154,8 @@
         });
       },
       addContainer(item){
-        this.getPopup().open({
-          title: bbn._('New container'),
+        this.getPopup({
+          label: bbn._('New container'),
           component: this.$options.components.container,
           source: {
             row: {

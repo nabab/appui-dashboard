@@ -75,7 +75,7 @@
                       :nav="true">
             <bbn-container url="widget"
                           :fixed="true"
-                          title="<?= _('Widget') ?>"
+                          label="<?= _('Widget') ?>"
                           icon="nf nf-fa-th_list">
               <appui-dashboard-configurator-form-widget :source="{
                                                           row: selectedWidget,
@@ -95,7 +95,7 @@
             </bbn-container>
             <bbn-container url="permissions"
                           :fixed="true"
-                          title="<?= _('Permissions') ?>"
+                          label="<?= _('Permissions') ?>"
                           icon="nf nf-fa-key">
               <div class="bbn-overlay bbn-border"
                   v-if="selectedWidget">

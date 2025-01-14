@@ -8,47 +8,47 @@
              :data="{id_parent:source.list.id}"
   >
     <bbns-column field="num"
-                title="<?= _('Num') ?>" 
+                label="<?= _('Num') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="text"
-                title="<?= _('Text') ?>" 
+                label="<?= _('Text') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="code"
-                title="<?= _('Code') ?>" 
+                label="<?= _('Code') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="closable"
-                title="<?= _('Closable') ?>" 
+                label="<?= _('Closable') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="observe"
-                title="<?= _('Observe') ?>" 
+                label="<?= _('Observe') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="component"
-                title="<?= _('Component') ?>" 
+                label="<?= _('Component') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="itemComponent"
-                title="<?= _('itemComponent') ?>" 
+                label="<?= _('itemComponent') ?>" 
     >
     </bbns-column>
 
     <bbns-column field="alias"
                  :render="renderAlias"              
-                 title="<?= _('itemComponent') ?>" 
+                 label="<?= _('itemComponent') ?>" 
     >
     </bbns-column>
     <bbns-column :width="180"
-                 ftitle="<?= _('Actions') ?>"
+                 flabel="<?= _('Actions') ?>"
                  :editable="false"
                  :buttons="renderButtons"
                  cls="bbn-c"

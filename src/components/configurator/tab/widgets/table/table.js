@@ -13,8 +13,8 @@
         } : false
       },
       addContainer(){
-        this.getPopup().open({
-          title: bbn._('New container'),
+        this.getPopup({
+          label: bbn._('New container'),
           component: this.$options.components.container,
           source: {
             row: {
@@ -43,8 +43,8 @@
       },
       editRow(row, col, idx){
         if (!!row && !!row.isContainer) {
-          this.getPopup().open({
-            title: bbn._('Container edition'),
+          this.getPopup({
+            label: bbn._('Container edition'),
             component: this.$options.components.container,
             source: {
               row: row
@@ -53,7 +53,7 @@
         }
         else {
           this.getRef('table').edit(row, {
-            title: bbn._('Widget edition')
+            label: bbn._('Widget edition')
           }, idx);
 
         }
