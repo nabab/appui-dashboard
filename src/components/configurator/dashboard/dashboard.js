@@ -93,7 +93,7 @@
           id: d[this.configurator.optCfg.fields.id],
           text: d[this.configurator.optCfg.fields.text],
           num: d[this.configurator.optCfg.fields.num],
-          icon: d.icon || (d.num_children ? 'nf nf-fa-folder' : 'nf nf-mdi-square'),
+          icon: d.icon || (d.num_children ? 'nf nf-fa-folder' : 'nf nf-md-square'),
           filterable: true,
           numChildren: d.num_children,
           data: d

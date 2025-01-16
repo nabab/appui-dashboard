@@ -14,6 +14,6 @@ $ctrl
     'groups' => $groups
   ])
   ->setUrl(APPUI_DASHBOARD_ROOT . 'page')
-  ->setIcon('nf nf-mdi-view_dashboard')
+  ->setIcon('nf nf-md-view_dashboard')
   ->setColor('teal', 'white')
   ->combo(_('Dashboards configurator'), true);

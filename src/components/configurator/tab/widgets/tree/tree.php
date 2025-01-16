@@ -9,7 +9,7 @@
                         label="<?= _('Add widget') ?>"
                         :notext="true"
                         @click="addWidget"/>
-            <bbn-button icon="nf nf-mdi-folder_plus"
+            <bbn-button icon="nf nf-md-folder_plus"
                         label="<?= _('Add container') ?>"
                         :notext="true"
                         @click="addContainer"/>

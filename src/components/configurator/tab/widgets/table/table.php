@@ -11,7 +11,7 @@
            }, {
              text: '<?= _('Add container') ?>',
              action: addContainer,
-             icon: 'nf nf-mdi-folder_plus'
+             icon: 'nf nf-md-folder_plus'
            }]"
            :expander="hasExpander"
            :scrollable="!source"

@@ -12,7 +12,7 @@
   <bbn-container url="widgets"
                  label="<?= _('Widgets') ?>"
                  :fixed="true"
-                 icon="nf nf-mdi-widgets"
+                 icon="nf nf-md-widgets"
                  :notext="true"
                  bcolor="skyblue"
                  fcolor="white">
@@ -28,7 +28,7 @@
                      label="<?= _('Tree') ?>"
                      :fixed="true"
                      component="appui-dashboard-configurator-tab-widgets-tree"
-                     icon="nf nf-mdi-file_tree"
+                     icon="nf nf-md-file_tree"
                      bcolor="skyblue"
                      fcolor="white"/>
     </bbn-router>

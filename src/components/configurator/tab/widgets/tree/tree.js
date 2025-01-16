@@ -13,7 +13,7 @@
         return {
           text: item[this.configurator.optCfg.fields.text],
           numChildren: item.num_children,
-          icon: item.isContainer ? 'nf nf-fa-folder' : 'nf nf-mdi-widgets',
+          icon: item.isContainer ? 'nf nf-fa-folder' : 'nf nf-md-widgets',
           data: item
         };
       },
@@ -26,7 +26,7 @@
             text: bbn._('Add widget'),
             action: this.addWidget
           }, {
-            icon: 'nf nf-mdi-folder_plus',
+            icon: 'nf nf-md-folder_plus',
             text: bbn._('Add container'),
             action: this.addContainer
           });
@@ -37,7 +37,7 @@
             text: bbn._('Copy'),
             action: this.treeCopy
           }, {
-            icon: 'nf nf-mdi-content_duplicate',
+            icon: 'nf nf-md-content_duplicate',
             text: bbn._('Duplicate'),
             action: this.treeDuplicate
           });
@@ -47,7 +47,7 @@
           && (this.currentCopy.data[this.configurator.optCfg.fields.id_parent] !== item.data[this.configurator.optCfg.fields.id])
         ) {
           res.push({
-            icon: 'nf nf-mdi-content_paste',
+            icon: 'nf nf-md-content_paste',
             text: bbn._('Paste'),
             action: this.treePaste
           });
