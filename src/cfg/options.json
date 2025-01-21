@@ -1,146 +1,132 @@
-{
-  "cfg": {
-    "show_code": 1,
-    "allow_children": 1,
-    "i18n": "en",
-    "show_icon": 1
-  },
-  "id_parent": ["appui"],
-  "text": "Dashboard",
-  "code": "dashboard",
-  "id_alias": ["plugin", "list", "templates", "option", "appui"],
-  "icon": "nf nf-fa-dashboard",
-  "plugin": true,
-  "items": [
+[
     {
-      "cfg": {
-        "show_code": 1,
-        "i18n": "en",
-        "show_icon": 1,
-        "scfg": {
-          "alias_name": "Widget",
-          "show_alias": 1
-        }
-      },
-      "text": "Dashboards",
-      "code": "list"
+        "cfg": {
+            "show_code": 1,
+            "i18n": "en",
+            "show_icon": 1,
+            "scfg": {
+                "alias_name": "Widget",
+                "show_alias": 1
+            }
+        },
+        "text": "Dashboards",
+        "code": "list"
     },
     {
-      "text": "Default dashboard",
-      "code": "default",
-      "icon": "nf nf-mdi-asterisk"
+        "text": "Default dashboard",
+        "code": "default",
+        "icon": "nf nf-mdi-asterisk"
     },
     {
-      "cfg": {
-        "i18n": "en",
-        "schema": [
-          {
-            "title": "Closable",
-            "field": "closable",
-            "type": "boolean",
-            "showable": true,
-            "editable": true,
-            "hidden": false,
-            "width": 70,
-            "options": {
-              "value": true,
-              "novalue": false
-            },
-            "cls": "bbn-c",
-            "default": false
-          },
-          {
-            "title": "Observe",
-            "field": "observe",
-            "type": "boolean",
-            "showable": true,
-            "editable": true,
-            "hidden": false,
-            "options": {
-              "value": true,
-              "novalue": false
-            },
-            "width": 70,
-            "cls": "bbn-c",
-            "default": false
-          },
-          {
-            "title": "Component",
-            "field": "component",
-            "type": "string",
-            "showable": true,
-            "editable": true,
-            "hidden": false,
-            "options": []
-          },
-          {
-            "title": "itemComponent",
-            "field": "itemComponent",
-            "type": "string",
-            "showable": true,
-            "editable": true,
-            "hidden": false,
-            "options": []
-          },
-          {
-            "title": "Limit",
-            "field": "limit",
-            "type": "number",
-            "showable": true,
-            "editable": true,
-            "hidden": true,
-            "options": [],
-            "default": 5
-          },
-          {
-            "title": "Right buttons",
-            "field": "buttonsRight",
-            "type": "json",
-            "showable": false,
-            "editable": true,
-            "hidden": true,
-            "options": {
-              "style": "height: 200px !important"
-            },
-            "default": "[]"
-          },
-          {
-            "title": "Left buttons",
-            "field": "buttonsLeft",
-            "type": "json",
-            "showable": false,
-            "editable": true,
-            "hidden": true,
-            "options": {
-              "style": "height: 200px !important"
-            },
-            "default": "[]"
-          },
-          {
-            "field": "options",
-            "title": "Component's options",
-            "hidden": true,
-            "editable": true,
-            "filterable": false,
-            "type": "json",
-            "options": {
-              "style": "height:200px !important"
-            },
-            "showable": false,
-            "default": "{}"
-          }
-        ],
-        "show_code": 1,
-        "allow_children": 1,
-        "show_icon": 1,
-        "inheritance": "cascade",
-        "permissions": "cascade",
-        "show_value": null,
-        "sortable": 1
-      },
-      "text": "Widgets",
-      "code": "widgets",
-      "icon": "nf nf-mdi-widgets"
+        "cfg": {
+            "i18n": "en",
+            "schema": [
+                {
+                    "title": "Closable",
+                    "field": "closable",
+                    "type": "boolean",
+                    "showable": true,
+                    "editable": true,
+                    "hidden": false,
+                    "width": 70,
+                    "options": {
+                        "value": true,
+                        "novalue": false
+                    },
+                    "cls": "bbn-c",
+                    "default": false
+                },
+                {
+                    "title": "Observe",
+                    "field": "observe",
+                    "type": "boolean",
+                    "showable": true,
+                    "editable": true,
+                    "hidden": false,
+                    "options": {
+                        "value": true,
+                        "novalue": false
+                    },
+                    "width": 70,
+                    "cls": "bbn-c",
+                    "default": false
+                },
+                {
+                    "title": "Component",
+                    "field": "component",
+                    "type": "string",
+                    "showable": true,
+                    "editable": true,
+                    "hidden": false,
+                    "options": []
+                },
+                {
+                    "title": "itemComponent",
+                    "field": "itemComponent",
+                    "type": "string",
+                    "showable": true,
+                    "editable": true,
+                    "hidden": false,
+                    "options": []
+                },
+                {
+                    "title": "Limit",
+                    "field": "limit",
+                    "type": "number",
+                    "showable": true,
+                    "editable": true,
+                    "hidden": true,
+                    "options": [],
+                    "default": 5
+                },
+                {
+                    "title": "Right buttons",
+                    "field": "buttonsRight",
+                    "type": "json",
+                    "showable": false,
+                    "editable": true,
+                    "hidden": true,
+                    "options": {
+                        "style": "height: 200px !important"
+                    },
+                    "default": "[]"
+                },
+                {
+                    "title": "Left buttons",
+                    "field": "buttonsLeft",
+                    "type": "json",
+                    "showable": false,
+                    "editable": true,
+                    "hidden": true,
+                    "options": {
+                        "style": "height: 200px !important"
+                    },
+                    "default": "[]"
+                },
+                {
+                    "field": "options",
+                    "title": "Component's options",
+                    "hidden": true,
+                    "editable": true,
+                    "filterable": false,
+                    "type": "json",
+                    "options": {
+                        "style": "height:200px !important"
+                    },
+                    "showable": false,
+                    "default": "{}"
+                }
+            ],
+            "show_code": 1,
+            "allow_children": 1,
+            "show_icon": 1,
+            "inheritance": "cascade",
+            "permissions": "cascade",
+            "show_value": null,
+            "sortable": 1
+        },
+        "text": "Widgets",
+        "code": "widgets",
+        "icon": "nf nf-mdi-widgets"
     }
-  ]
-}
+]
