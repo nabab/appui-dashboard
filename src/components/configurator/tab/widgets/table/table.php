@@ -21,16 +21,16 @@
            @editfailure="editFailure">
   <bbns-column :field="configurator.optCfg.fields.id"
                label="<?= _('ID') ?>"
-               :hidden="true"
+               :invisible="true"
                :editable="false"/>
   <bbns-column :field="configurator.optCfg.fields.id_parent"
                label="<?= _('ID parent') ?>"
-               :hidden="true"
+               :invisible="true"
                :editable="false"
                :default="source ? source.id : null"/>
   <bbns-column field="plugin"
                label="<?= _('Plugin') ?>"
-               :hidden="true"
+               :invisible="true"
                :editable="true"
                :default="defaultPlugin"
                :editor="$options.components.plugin"/>

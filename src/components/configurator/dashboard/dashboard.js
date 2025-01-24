@@ -177,7 +177,7 @@
     <span v-html="source.text"/>
   </span>
   <i v-if="!source.numChildren && (!!source.data.component || !!source.data.itemComponent)"
-     class="nf nf-fa-plus_circle bbn-p"
+     class="nf nf-md-plus_circle_outline bbn-p bbn-left-xsmargin"
      @click="addWidget"/>
 </span>
         `,
@@ -236,7 +236,7 @@
   <span class="bbn-tree-node-block-title">
     <span v-html="source.text"/>
   </span>
-  <i class="nf nf-fa-minus_circle bbn-p"
+  <i class="nf nf-md-minus_circle_outline bbn-p bbn-left-xsmargin"
      @click.prevent.stop="removeWidget"/>
 </span>
         `,
