@@ -25,7 +25,7 @@
                     @select="select"
                     ref="tree"
                     :menu="treeMenu"
-                    :draggable="true"
+                    :drag="true"
                     @move="treeMove"
                     :map="treeMap"
                     uid="id"/>
