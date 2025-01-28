@@ -14,7 +14,7 @@
            :auto-reset="true">
   <bbns-column :field="configurator.prefCfg.fields.id"
                label="<?= _('ID') ?>"
-               :hidden="true"/>
+               :invisible="true"/>
   <bbns-column :field="configurator.prefCfg.fields.text"
                label="<?= _('Name') ?>"
                :render="renderText"/>
