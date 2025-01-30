@@ -1,14 +1,22 @@
 <?php
-$success = false;
+
+use bbn\Str;
+use bbn\Appui\Dashboard;
+
+$res = ['success' => false];
+
+/** @var bbn\Mvc\Model $model */
 if ($model->hasData('action', true)) {
   $optCfg = $model->inc->options->getClassCfg();
   $optFields = $optCfg['arch']['options'];
-  $dash = new \bbn\Appui\Dashboard();
+  $dash = new Dashboard();
   switch ($model->data['action']) {
     case 'insert':
       if (!$model->hasData($optFields['text'], true)) {
-        throw new \Exception(sprintf(_("The %s property is mandatory"), $optFields['text']));
+        $res['error'] = sprintf(_("The %s property is mandatory"), $optFields['text']);
+        return $res;
       }
+
       $idParent = empty($model->data[$optFields['id_parent']])
         ? $model->inc->options->fromCode('widgets', 'dashboard', 'appui')
         : $model->data[$optFields['id_parent']];
@@ -21,6 +29,7 @@ if ($model->hasData('action', true)) {
         if ($isAppuiPlugin) {
           $pluginName = substr($pluginName, 6);
         }
+
         if ($p = $model->inc->options->fromCode('plugins', $pluginName, $isAppuiPlugin ? 'appui' : 'plugins')) {
           if (!$appuiDashboard = $model->inc->options->fromCode('appui-dashboard', $p)) {
             $appuiDashboard = $model->inc->options->add([
@@ -30,7 +39,8 @@ if ($model->hasData('action', true)) {
               $optFields['id_alias'] => $model->inc->options->fromCode('dashboard', 'appui')
             ]);
           }
-          if (\bbn\Str::isUid($appuiDashboard)) {
+
+          if (Str::isUid($appuiDashboard)) {
             if (!$appuiDashboardWidgets = $model->inc->options->fromCode('widgets', $appuiDashboard)) {
               $appuiDashboardWidgets = $model->inc->options->add([
                 $optFields['id_parent'] => $appuiDashboard,
@@ -39,49 +49,86 @@ if ($model->hasData('action', true)) {
                 $optFields['id_alias'] => $model->inc->options->fromCode('widgets', 'dashboard', 'appui')
               ]);
             }
-            if (\bbn\Str::isUid($appuiDashboardWidgets)) {
+
+            if (Str::isUid($appuiDashboardWidgets)) {
               $idParent = $appuiDashboardWidgets;
             }
           }
         }
       }
       if ($model->hasData('isContainer', true)) {
-        $success = !!$model->inc->options->add([
-          $optFields['text'] => $model->data[$optFields['text']],
-          $optFields['code'] => $model->data[$optFields['code']] ?: null,
-          $optFields['id_parent'] => $idParent,
-          'isContainer' => true
-        ]);
+        try {
+          $res['success'] = !!$model->inc->options->add([
+            $optFields['text'] => $model->data[$optFields['text']],
+            $optFields['code'] => $model->data[$optFields['code']] ?: null,
+            $optFields['id_parent'] => $idParent,
+            'isContainer' => true
+          ]);
+        }
+        catch (Exception $e) {
+          $res['error'] = $e->getMessage();
+        }
       }
       else {
         unset($model->data['res'], $model->data['action']);
         $model->data[$optFields['id_parent']] = $idParent;
-        $success = $dash->addNativeWidget($model->data);
+        try {
+          $res['success'] = $dash->addNativeWidget($model->data);
+        }
+        catch (Exception $e) {
+          $res['error'] = $e->getMessage();
+        }
       }
+
       break;
+
     case 'update':
       if (!$model->hasData($optFields['id'], true)) {
-        throw new \Exception(sprintf(_("The %s property is mandatory"), $optFields['id']));
+        $res['error'] = sprintf(_("The %s property is mandatory"), $optFields['id']);
       }
-      if (!$model->hasData($optFields['text'], true)) {
-        throw new \Exception(sprintf(_("The %s property is mandatory"), $optFields['text']));
+      elseif (!$model->hasData($optFields['text'], true)) {
+        $res['error'] = sprintf(_("The %s property is mandatory"), $optFields['text']);
       }
-      if ($model->hasData('isContainer', true)) {
+      elseif ($model->hasData('isContainer', true)) {
         unset($model->data['res'], $model->data['action']);
-        $success = !!$model->inc->options->set($model->data[$optFields['id']], $model->data);
-      }
+        try {
+          $res['success'] = !!$model->inc->options->set($model->data[$optFields['id']], $model->data);
+        }
+        catch (Exception $e) {
+          $res['error'] = $e->getMessage();
+        }
+     }
       else {
-        $success = $dash->updateNativeWidget($model->data[$optFields['id']], $model->data);
+        try {
+          $res['success'] = $dash->updateNativeWidget($model->data[$optFields['id']], $model->data);
+        }
+        catch (Exception $e) {
+          $res['error'] = $e->getMessage();
+        }
       }
+
       break;
+
     case 'delete':
-      $success = $dash->deleteNativeWidget($model->data[$optFields['id']]);
+      try {
+        $res['success'] = $dash->deleteNativeWidget($model->data[$optFields['id']]);
+      }
+      catch (Exception $e) {
+        $res['error'] = $e->getMessage();
+      }
+
       break;
+
     case 'move':
-      $success = $dash->moveNativeWidget($model->data[$optFields['id']], $model->data[$optFields['id_parent']]);
+      try {
+        $res['success'] = $dash->moveNativeWidget($model->data[$optFields['id']], $model->data[$optFields['id_parent']]);
+      }
+      catch (Exception $e) {
+        $res['error'] = $e->getMessage();
+      }
+
       break;
   }
 }
-return [
-  'success' => $success
-];
+
+return $res;
