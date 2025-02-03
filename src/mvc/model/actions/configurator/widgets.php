@@ -56,6 +56,7 @@ if ($model->hasData('action', true)) {
           }
         }
       }
+
       if ($model->hasData('isContainer', true)) {
         try {
           $res['success'] = !!$model->inc->options->add([

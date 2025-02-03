@@ -45,7 +45,7 @@
     <bbn-pane>
       <div class="bbn-overlay bbn-flex-height">
         <div class="bbn-header bbn-spadding bbn-b bbn-c bbn-no-border-left bbn-no-border-top"><?= _('INFO') ?></div>
-        <bbn-form :action="configurator.root + 'actions/configurator/dashboards'"
+        <bbn-form :action="configurator.root + 'actions/configurator/dashboard/action'"
                   :data="{action: 'update'}"
                   :source="source.info"
                   v-if="configurator"
