@@ -15,7 +15,7 @@
     {
         "text": "Default dashboard",
         "code": "default",
-        "icon": "nf nf-mdi-asterisk"
+        "icon": "nf nf-md-asterisk"
     },
     {
         "cfg": {
@@ -127,6 +127,6 @@
         },
         "text": "Widgets",
         "code": "widgets",
-        "icon": "nf nf-mdi-widgets"
+        "icon": "nf nf-md-widgets"
     }
 ]
