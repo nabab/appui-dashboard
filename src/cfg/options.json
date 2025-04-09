@@ -6,7 +6,7 @@
             "show_icon": 1,
             "scfg": {
                 "alias_name": "Widget",
-                "show_alias": 1
+                "relations": "alias"
             }
         },
         "text": "Dashboards",
