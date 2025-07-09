@@ -7,7 +7,7 @@
 /** @var bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;
 if ( isset($ctrl->post['text'], $ctrl->post['id']) ){
-  $cfg = $ctrl->inc->options->getParentCfg($ctrl->post['id']);
+  $cfg = $ctrl->inc->options->getApplicableCfg($ctrl->post['id']);
   if ( !empty($cfg['schema']) && ($schema = json_decode($cfg['schema'], true)) ){
     foreach ( $ctrl->post as $i => $d ){
       if (
