@@ -22,7 +22,7 @@
             "i18n": "en",
             "schema": [
                 {
-                    "title": "Closable",
+                    "label": "Closable",
                     "field": "closable",
                     "type": "boolean",
                     "showable": true,
@@ -37,7 +37,7 @@
                     "default": false
                 },
                 {
-                    "title": "Observe",
+                    "label": "Observe",
                     "field": "observe",
                     "type": "boolean",
                     "showable": true,
@@ -52,7 +52,7 @@
                     "default": false
                 },
                 {
-                    "title": "Component",
+                    "label": "Component",
                     "field": "component",
                     "type": "string",
                     "showable": true,
@@ -61,7 +61,7 @@
                     "options": []
                 },
                 {
-                    "title": "itemComponent",
+                    "label": "itemComponent",
                     "field": "itemComponent",
                     "type": "string",
                     "showable": true,
@@ -70,7 +70,7 @@
                     "options": []
                 },
                 {
-                    "title": "Limit",
+                    "label": "Limit",
                     "field": "limit",
                     "type": "number",
                     "showable": true,
@@ -80,7 +80,7 @@
                     "default": 5
                 },
                 {
-                    "title": "Right buttons",
+                    "label": "Right buttons",
                     "field": "buttonsRight",
                     "type": "json",
                     "showable": false,
@@ -92,7 +92,7 @@
                     "default": "[]"
                 },
                 {
-                    "title": "Left buttons",
+                    "label": "Left buttons",
                     "field": "buttonsLeft",
                     "type": "json",
                     "showable": false,
@@ -105,7 +105,7 @@
                 },
                 {
                     "field": "options",
-                    "title": "Component's options",
+                    "label": "Component's options",
                     "hidden": true,
                     "editable": true,
                     "filterable": false,
