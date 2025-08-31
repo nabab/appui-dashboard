@@ -5,7 +5,7 @@
  * Date: 05/06/2017
  * Time: 16:20
  */
-/** @var \bbn\Mvc\Controller $ctrl */
+/** @var bbn\Mvc\Controller $ctrl */
 /** @var \stdClass           $ctrl->obj */
 use bbn\X;
 

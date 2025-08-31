@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Controller $ctrl */
+/** @var bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;  
 if ( isset($ctrl->arguments[0]) && defined('BBN_REFERER') ){
   $actions = ['save', 'order'];

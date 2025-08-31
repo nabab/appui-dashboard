@@ -1,5 +1,5 @@
 <?php
-/** @var \bbn\Mvc\Controller $ctrl */
+/** @var bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;  
 if (\bbn\Str::isUid($ctrl->arguments[0])
   && isset($ctrl->arguments[1])

@@ -1,11 +1,7 @@
 <?php
 
-/*
- * Describe what it does!
- *
- **/
 
-/** @var $this \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 $plugins = $model->getPlugins();
 $widgets = [];
 $fs = new \bbn\File\System();
