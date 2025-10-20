@@ -1,6 +1,6 @@
 <bbn-router :scrollable="true"
             :autoload="true"
-            :nav="true">
+            mode="tabs">
   <bbn-container url="dashboards"
                  label="<?= _('Dashboards') ?>"
                  :fixed="true"
@@ -16,7 +16,7 @@
                  :notext="true"
                  bcolor="skyblue"
                  fcolor="white">
-  	<bbn-router :nav="true">
+  	<bbn-router mode="tabs">
       <bbn-container url="list"
                      label="<?= _('List') ?>"
                      :fixed="true"

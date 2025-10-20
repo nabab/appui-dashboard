@@ -72,7 +72,7 @@
         <div class="bbn-header bbn-spadding bbn-b bbn-c bbn-no-border-left bbn-no-border-top bbn-top-sspace"><?= _('WIDGET CONFIGURATION') ?></div>
         <div class="appui-dashboard-configurator-dashboard-tabs bbn-flex-fill">
           <bbn-router :autoload="true"
-                      :nav="true">
+                      mode="tabs">
             <bbn-container url="widget"
                           :fixed="true"
                           label="<?= _('Widget') ?>"

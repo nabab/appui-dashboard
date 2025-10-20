@@ -41,7 +41,7 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
         'value' => $model->inc->user->getId()
       ], [
         'field' => $model->db->cfn($pFields['id_group'], $pTable),
-        'value' => $model->inc->user->getGroup()
+        'value' => $model->inc->user->getIdGroup()
       ]]
     ]]
   ],
