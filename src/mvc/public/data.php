@@ -8,6 +8,7 @@
 /** @var bbn\Mvc\Controller $ctrl */
 /** @var \stdClass           $ctrl->obj */
 use bbn\X;
+use bbn\Str;
 
 $ctrl->obj->success = false;
 if (!empty($ctrl->post['key'])
@@ -57,7 +58,7 @@ if (!empty($ctrl->post['key'])
       }
       /*
       if (X::indexOf($plugin, 'appui-') === 0) {
-        $plugin = substr($plugin, 6);
+        $plugin = Str::sub($plugin, 6);
       }
       */
     }

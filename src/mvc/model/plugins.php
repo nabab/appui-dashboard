@@ -1,5 +1,6 @@
 <?php
 
+use bbn\Str;
 
 /** @var bbn\Mvc\Model $model */
 $plugins = $model->getPlugins();
@@ -16,12 +17,12 @@ foreach ( $plugins as $plugin => $cfg ){
   foreach ( $reals as $f ){
     if (
       $fs->exists($cfg['path'].'src/mvc/html/'.$f) ||
-      $fs->exists($cfg['path'].'src/mvc/html/'.substr($f, 0, -3).'html')
+      $fs->exists($cfg['path'].'src/mvc/html/' . Str::sub($f, 0, -3).'html')
     ){
       if ( basename($f) !== 'index.php' ){
-        $new = $cfg['url'].'/'.substr($f, 0, -4);
+        $new = $cfg['url'].'/' . Str::sub($f, 0, -4);
         $files = array_filter($files, function($a)use($new){
-          return strpos($a, $new.'/') === false;
+          return Str::pos($a, $new.'/') === false;
         });
         $files[] = $new;
       }
@@ -30,7 +31,7 @@ foreach ( $plugins as $plugin => $cfg ){
   $links = [];
   foreach ( $files as $f ){
     $id_option = $model->inc->perm->is($f);
-    $title = substr($f, strlen($cfg['url'].'/'));
+    $title = Str::sub($f, Str::len($cfg['url'].'/'));
     if ( $id_option !== null ){
       $opt = $model->inc->options->option($id_option);
       if ($opt['text'] && ($opt['code'] !== $opt['text'])){

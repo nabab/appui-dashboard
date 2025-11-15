@@ -25,9 +25,9 @@ if ($model->hasData('action', true)) {
         && ($model->data['plugin'] !== $model->pluginUrl('appui-dashboard'))
         && ($pluginName = $model->pluginName($model->data['plugin']))
       ) {
-        $isAppuiPlugin = strpos($pluginName, 'appui-') === 0;
+        $isAppuiPlugin = Str::pos($pluginName, 'appui-') === 0;
         if ($isAppuiPlugin) {
-          $pluginName = substr($pluginName, 6);
+          $pluginName = Str::sub($pluginName, 6);
         }
 
         if ($p = $model->inc->options->fromCode('plugins', $pluginName, $isAppuiPlugin ? 'appui' : 'plugins')) {
