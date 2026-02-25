@@ -9,68 +9,74 @@
                 @failure="emitError"
                 mode="big">
         <div class="bbn-spadding bbn-grid-fields">
-          <template v-if="!!extraFields && !source.row[configurator.optCfg.fields.id]">
+          <template bbn-if="!!extraFields && !source.row[configurator.optCfg.fields.id]">
             <label><?= _('Plugin') ?></label>
-            <bbn-dropdown v-model="source.row.plugin"
+            <bbn-dropdown bbn-model="source.row.plugin"
                           :nullable="true"
                           :source="plugins"/>
           </template>
 
           <label><?= _('Name') ?></label>
-          <bbn-input v-model="source.row[configurator.optCfg.fields.text]"
+          <bbn-input bbn-model="source.row[configurator.optCfg.fields.text]"
                      class="bbn-wide"
                      :required="true"/>
 
           <label><?= _('Code') ?></label>
-          <bbn-input v-model="source.row[configurator.optCfg.fields.code]"
+          <bbn-input bbn-model="source.row[configurator.optCfg.fields.code]"
                      class="bbn-wide"
                     :required="true"/>
 
           <label><?= _('URL') ?></label>
-          <bbn-input v-model="source.row.url"
+          <bbn-input bbn-model="source.row.url"
                      class="bbn-wide"/>
 
           <label><?= _('Icon') ?></label>
-          <bbn-input v-model="source.row.icon"
+          <bbn-input bbn-model="source.row.icon"
                      class="bbn-wide"/>
 
           <label><?= _('Closable') ?></label>
-          <bbn-checkbox v-model="source.row.closable"
+          <bbn-checkbox bbn-model="source.row.closable"
                         :value="true"
                         :novalue="false"/>
 
           <label><?= _('Observe') ?></label>
-          <bbn-checkbox v-model="source.row.observe"
+          <bbn-checkbox bbn-model="source.row.observe"
                         :value="true"
                         :novalue="false"/>
 
           <label><?= _('Limit') ?></label>
-          <bbn-numeric v-model="source.row.limit"
+          <bbn-numeric bbn-model="source.row.limit"
                        class="bbn-wide"
                       :min="0"/>
 
+          <label><?= _('Durée du cache') ?></label>
+          <bbn-numeric bbn-model="source.row.cache"
+                       class="bbn-wide"
+                       :nullable="true"
+                      :min="0"/>
+
           <label><?= _('Component') ?></label>
-          <bbn-input v-model="source.row.component"
+          <bbn-input bbn-model="source.row.component"
                      class="bbn-wide"/>
 
           <label><?= _('itemComponent') ?></label>
-          <bbn-input v-model="source.row.itemComponent"
+          <bbn-input bbn-model="source.row.itemComponent"
                      class="bbn-wide"/>
 
           <label><?= _('Right buttons') ?></label>
-          <bbn-json-editor v-model="source.row.buttonsRight"
+          <bbn-json-editor bbn-model="source.row.buttonsRight"
                            class="bbn-widest"/>
 
           <label><?= _('Left buttons') ?></label>
-          <bbn-json-editor v-model="source.row.buttonsLeft"
+          <bbn-json-editor bbn-model="source.row.buttonsLeft"
                            class="bbn-widest"/>
 
           <label><?= _("Component's options") ?></label>
-          <bbn-json-editor v-model="source.row.options"
+          <bbn-json-editor bbn-model="source.row.options"
                            class="bbn-widest"/>
 
           <label><?= _('Cache') ?></label>
-          <bbn-numeric v-model="source.row.cache"
+          <bbn-numeric bbn-model="source.row.cache"
                        :min="0"
                        class="bbn-wide"/>
         </div>
