@@ -18,10 +18,10 @@ $o = $model->inc->options;
 /** @var array $res */
 $res = ['success' => false];
 /** @var bbn\Mvc\Model $model */
-$model->timer->reset();
-$model->timer->start('start', constant('BBN_START_TIME'));
-$model->timer->stop('start');
-$model->timer->start('widgetOption');
+$model->getTimer()->reset();
+$model->getTimer()->start('start', constant('BBN_START_TIME'));
+$model->getTimer()->stop('start');
+$model->getTimer()->start('widgetOption');
 if ($model->hasData('key', true)
   && $dash
   && ($idWidget = $dash->getWidgetOption($model->data['key']) ?: $model->data['key'])
@@ -34,13 +34,13 @@ if ($model->hasData('key', true)
       foreach ($res as $k => $r) {
         $res[$k] = $r;
       }
-      $res['timing'] = $model->timer->results();
+      $res['timing'] = $model->getTimer()->results();
     }
     else {
       $res = [
         'success' => true,
         'data'  => $res,
-        'timing' => $model->timer->results(),
+        'timing' => $model->getTimer()->results(),
         'total' => count($res)
       ];
     }
