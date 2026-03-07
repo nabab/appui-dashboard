@@ -7,7 +7,9 @@ $res = ['success' => false];
 
 /** @var bbn\Mvc\Model $model */
 if ($model->hasData('action', true)) {
-  $optCfg = $model->inc->options->getClassCfg();
+  /** @var bbn\Appui\Option $o */
+  $o = $model->inc->options;
+  $optCfg = $o->getClassCfg();
   $optFields = $optCfg['arch']['options'];
   $dash = new Dashboard();
   switch ($model->data['action']) {
@@ -18,7 +20,7 @@ if ($model->hasData('action', true)) {
       }
 
       $idParent = empty($model->data[$optFields['id_parent']])
-        ? $model->inc->options->fromCode('widgets', 'dashboard', 'appui')
+        ? $o->fromCode('widgets', 'dashboard', 'appui')
         : $model->data[$optFields['id_parent']];
       if (empty($model->data[$optFields['id_parent']])
         && $model->hasData('plugin', true)
@@ -30,23 +32,23 @@ if ($model->hasData('action', true)) {
           $pluginName = Str::sub($pluginName, 6);
         }
 
-        if ($p = $model->inc->options->fromCode('plugins', $pluginName, $isAppuiPlugin ? 'appui' : 'plugins')) {
-          if (!$appuiDashboard = $model->inc->options->fromCode('appui-dashboard', $p)) {
-            $appuiDashboard = $model->inc->options->add([
+        if ($p = $o->fromCode('plugins', $pluginName, $isAppuiPlugin ? 'appui' : 'plugins')) {
+          if (!$appuiDashboard = $o->fromCode('appui-dashboard', $p)) {
+            $appuiDashboard = $o->add([
               $optFields['id_parent'] => $p,
               $optFields['code'] => 'appui-dashboard',
               $optFields['text'] => 'Dashboard',
-              $optFields['id_alias'] => $model->inc->options->fromCode('dashboard', 'appui')
+              $optFields['id_alias'] => $o->fromCode('dashboard', 'appui')
             ]);
           }
 
           if (Str::isUid($appuiDashboard)) {
-            if (!$appuiDashboardWidgets = $model->inc->options->fromCode('widgets', $appuiDashboard)) {
-              $appuiDashboardWidgets = $model->inc->options->add([
+            if (!$appuiDashboardWidgets = $o->fromCode('widgets', $appuiDashboard)) {
+              $appuiDashboardWidgets = $o->add([
                 $optFields['id_parent'] => $appuiDashboard,
                 $optFields['code'] => 'widgets',
                 $optFields['text'] => 'Widgets',
-                $optFields['id_alias'] => $model->inc->options->fromCode('widgets', 'dashboard', 'appui')
+                $optFields['id_alias'] => $o->fromCode('widgets', 'dashboard', 'appui')
               ]);
             }
 
@@ -59,7 +61,7 @@ if ($model->hasData('action', true)) {
 
       if ($model->hasData('isContainer', true)) {
         try {
-          $res['success'] = !!$model->inc->options->add([
+          $res['success'] = !!$o->add([
             $optFields['text'] => $model->data[$optFields['text']],
             $optFields['code'] => $model->data[$optFields['code']] ?: null,
             $optFields['id_parent'] => $idParent,
@@ -93,7 +95,7 @@ if ($model->hasData('action', true)) {
       elseif ($model->hasData('isContainer', true)) {
         unset($model->data['res'], $model->data['action']);
         try {
-          $res['success'] = !!$model->inc->options->set($model->data[$optFields['id']], $model->data);
+          $res['success'] = !!$o->set($model->data[$optFields['id']], $model->data);
         }
         catch (Exception $e) {
           $res['error'] = $e->getMessage();
@@ -101,7 +103,7 @@ if ($model->hasData('action', true)) {
      }
       else {
         try {
-          $res['success'] = $dash->updateNativeWidget($model->data[$optFields['id']], $model->data);
+          $res['success'] = !!$o->set($model->data[$optFields['id']], $model->data);
         }
         catch (Exception $e) {
           $res['error'] = $e->getMessage();

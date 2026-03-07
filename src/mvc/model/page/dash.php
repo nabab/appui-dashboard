@@ -4,12 +4,13 @@ if ($model->hasData('id', true)
   && ($dash = new \bbn\Appui\Dashboard($model->data['id']))
   && ($info = $dash->get())
   && ($cfg = $model->inc->pref->getClassCfg())
+  && ($data = $model->getModel($model->pluginUrl('appui-dashboard').'/data/configurator/widgets/tree'))
 ) {
   return [
     'name' => $info[$cfg['arch']['user_options']['text']],
     'icon' => $info['icon'] ?? '',
     'info' => $info,
-    'widgets' => $dash->getWidgets(),
-    'availableWidgets' => $model->getModel($model->pluginUrl('appui-dashboard').'/data/configurator/widgets/tree')['data']
+    'widgets' => $dash->getPublicWidgets(),
+    'availableWidgets' => $data['data']
   ];
 }

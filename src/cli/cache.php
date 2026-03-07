@@ -18,8 +18,10 @@ if (!isset($ctrl->inc->perm)) {
 foreach ($widgets as $w) {
   if (!empty($w['cache'])) {
     $code = $w['code'];
-    $ctrl->getTimer()->start('widget');
+    $ctrl->getTimer()->start('widget ' . $code);
+    $dashboard->deleteWidgetCache($w['id_option'], $ctrl);
     $dashboard->getWidgetData($w['id_option'], $ctrl, empty($w['limit']) ? [] : ['start' => 0, 'limit' => $w['limit']]);
-    $ctrl->getTimer()->stop('widget');
+    $ctrl->getTimer()->stop('widget ' . $code);
   }
 }
+X::adump($ctrl->getTimer()->results());

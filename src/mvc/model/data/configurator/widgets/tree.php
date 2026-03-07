@@ -1,5 +1,7 @@
 <?php
-if ($all = $model->inc->options->fullTreeRef('widgets', 'dashboard', 'appui')) {
+/** @var bbn\Appui\Option $o */
+$o = $model->inc->options;
+if ($all = $o->fullTreeRef('widgets', 'dashboard', 'appui')) {
   if (!empty($all['items'])) {
     function filterItems($items){
       foreach ($items as $i => $item) {

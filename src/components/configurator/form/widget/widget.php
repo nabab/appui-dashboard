@@ -74,11 +74,6 @@
           <label><?= _("Component's options") ?></label>
           <bbn-json-editor bbn-model="source.row.options"
                            class="bbn-widest"/>
-
-          <label><?= _('Cache') ?></label>
-          <bbn-numeric bbn-model="source.row.cache"
-                       :min="0"
-                       class="bbn-wide"/>
         </div>
       </bbn-form>
     </div>
