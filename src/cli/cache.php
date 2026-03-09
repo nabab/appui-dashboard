@@ -9,12 +9,12 @@ use bbn\User\Permissions;
 use bbn\Appui\Dashboard;
 /** @var bbn\Mvc\Controller $ctrl */
 
-$dashboard = new Dashboard('default');
-$widgets = $dashboard->getWidgets();
 $o = $ctrl->inc->options;
 if (!isset($ctrl->inc->perm)) {
   $ctrl->addInc('perm', new Permissions($ctrl->getRoutes()));
 }
+$dashboard = new Dashboard('default');
+$widgets = $dashboard->getWidgets();
 foreach ($widgets as $w) {
   if (!empty($w['cache'])) {
     $code = $w['code'];
