@@ -19,7 +19,7 @@ $o = $model->inc->options;
 $res = ['success' => false];
 /** @var bbn\Mvc\Model $model */
 $model->getTimer()->reset();
-$model->getTimer()->start('start', constant('BBN_START_TIME'));
+$model->getTimer()->start('start', $model->getStartTime());
 $model->getTimer()->stop('start');
 $model->getTimer()->start('widgetOption');
 if ($model->hasData('key', true)
