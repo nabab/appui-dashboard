@@ -5,9 +5,9 @@
 
 /* 
 $res = ['success' => false];
-if ( isset($model->data['order']) && is_array($model->data['order']) && defined('BBN_REFERER') ){
+if ( isset($model->data['order']) && is_array($model->data['order']) && $model->getConstant('referer')){
   if (
-    ($route = $ctrl->getRoute(BBN_REFERER, 'public')) &&
+    ($route = $ctrl->getRoute($model->getConstant('referer'), 'public')) &&
     ($id_perm = $ctrl->inc->perm->fromPath($route['path']))
   ){
     if ( !$model->inc->pref->userHas($id_perm) ){

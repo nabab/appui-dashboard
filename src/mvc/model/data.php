@@ -7,10 +7,7 @@
  */
 
 use bbn\X;
-use bbn\Str;
-use function is_array;
-use function count;
-
+/** @var bbn\Mvc\Model $model */
 /** @var bbn\Appui\Dashboard $dash */
 $dash = $model->inc->dashboard;
 /** @var bbn\Appui\Option $o */

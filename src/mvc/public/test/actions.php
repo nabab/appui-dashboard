@@ -3,7 +3,7 @@
 $ctrl->obj->success = false;  
 if (\bbn\Str::isUid($ctrl->arguments[0])
   && isset($ctrl->arguments[1])
-  && defined('BBN_REFERER')
+  && $ctrl->getConstant('referer')
 ){
   $actions = ['save', 'order'];
   if (\in_array($ctrl->arguments[1], $actions, true)){

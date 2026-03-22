@@ -1,7 +1,7 @@
 <?php
 /** @var bbn\Mvc\Controller $ctrl */
 $ctrl->obj->success = false;  
-if ( isset($ctrl->arguments[0]) && defined('BBN_REFERER') ){
+if ( isset($ctrl->arguments[0]) && $ctrl->getConstant('referer')){
   $actions = ['save', 'order'];
   if ( \in_array($ctrl->arguments[0], $actions, true) ){
     if ( $ctrl->obj->data = $ctrl->getObjectModel('./actions/'.$ctrl->arguments[0], $ctrl->post) ){
