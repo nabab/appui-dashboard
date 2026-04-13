@@ -20,7 +20,7 @@ foreach ($widgets as $w) {
     $code = $w['code'];
     $ctrl->getTimer()->start('widget ' . $code);
     $dashboard->deleteWidgetCache($w['id_option'], $ctrl);
-    $dashboard->getWidgetData($w['id_option'], $ctrl, empty($w['limit']) ? [] : ['start' => 0, 'limit' => $w['limit']]);
+    $dashboard->getWidgetData($w['id_option'], $ctrl, empty($w['limit']) ? [] : ['start' => 0, 'limit' => $w['limit']], null, true);
     $ctrl->getTimer()->stop('widget ' . $code);
   }
 }

@@ -4,4 +4,5 @@
 
 
 $ctrl->setIcon('nf nf-fa-dashboard')
-     ->combo(_("Dashboard"), true);
+     ->combo(_("Dashboard"), true)
+     ->clientCache();
