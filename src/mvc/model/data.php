@@ -19,6 +19,9 @@ $model->getTimer()->reset();
 $model->getTimer()->start('start', $model->getStartTime());
 $model->getTimer()->stop('start');
 $model->getTimer()->start('widgetOption');
+if (!$model->hasData('key', true) && isset($model->data['data']) && isset($model->data['data']['key'])) {
+  $model->addData(['key' => $model->data['data']['key']]);
+}
 if ($model->hasData('key', true)
   && $dash
   && ($idWidget = $dash->getWidgetOption($model->data['key']) ?: $model->data['key'])
