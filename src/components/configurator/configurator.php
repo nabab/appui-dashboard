@@ -5,7 +5,7 @@
                  label="<?= _('Dashboards') ?>"
                  :fixed="true"
                  component="appui-dashboard-configurator-tab-dashboards"
-                 icon="nf nf-oct-dashboard"
+                 icon="nf nf-cod-dashboard"
                  :notext="true"
                  bcolor="yellowgreen"
                  fcolor="white"/>

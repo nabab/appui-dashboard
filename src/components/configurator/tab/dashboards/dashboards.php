@@ -46,7 +46,7 @@
                }, {
                  text: '<?= _('Configure') ?>',
                  action: configure,
-                 icon: 'nf nf-oct-settings',
+                 icon: 'nf nf-cod-settings',
                  notext: true
                }, {
                  text: '<?= _('Edit') ?>',
