@@ -25,8 +25,18 @@
               appui.error();
             }
           })
-          
         }
+      }
+    },
+    async created() {
+      const list = bbn.fn.unique(
+        bbn.fn.map(
+          this.widgets || [],
+          w => w.component || w.itemComponent
+        )
+      );
+      if (list.length) {
+        await bbn.cp.preloadComponents(list);
       }
     }
   };
