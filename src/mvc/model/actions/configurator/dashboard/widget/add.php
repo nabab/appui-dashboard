@@ -9,7 +9,7 @@ if (!$model->hasData('idDashboard', true) || !Str::isUid($model->data['idDashboa
 if (!$model->hasData('idWidget', true) || !Str::isUid($model->data['idWidget'])) {
   throw new Exception(_("The widget's id is mandatory"));
 }
-$dash = new Dashboard($model->data['idDashboard']);
+$dash = new Dashboard($model->db, $model->data['idDashboard']);
 try {
   $id = $dash->addWidget($model->data['idWidget']);
 }

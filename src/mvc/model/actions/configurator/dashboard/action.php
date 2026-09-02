@@ -6,7 +6,7 @@ if ($model->hasData('action', true)) {
   switch ($model->data['action']) {
     case 'insert':
       if ($model->hasData([$prefFields['text'], 'code'], true)) {
-        $dash = new Dashboard();
+        $dash = new Dashboard($model->db);
         if ($id = $dash->insert([
           $prefFields['text'] => $model->data[$prefFields['text']],
           'code' => $model->data['code'],
@@ -20,7 +20,7 @@ if ($model->hasData('action', true)) {
       break;
     case 'update':
       if ($model->hasData([$prefFields['id'], $prefFields['text'], 'code'], true)) {
-        $dash = new Dashboard($model->data[$prefFields['id']]);
+        $dash = new Dashboard($model->db, $model->data[$prefFields['id']]);
         $toUpd = [
           $prefFields['text'] => $model->data[$prefFields['text']],
           'code' => $model->data['code'],
@@ -35,7 +35,7 @@ if ($model->hasData('action', true)) {
       break;
     case 'delete':
       if ($model->hasData($prefFields['id'], true)) {
-        $dash = new Dashboard($model->data[$prefFields['id']]);
+        $dash = new Dashboard($model->db, $model->data[$prefFields['id']]);
         $success = $dash->delete();
       }
       break;

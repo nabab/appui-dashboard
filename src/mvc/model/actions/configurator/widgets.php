@@ -11,7 +11,7 @@ if ($model->hasData('action', true)) {
   $o = $model->inc->options;
   $optCfg = $o->getClassCfg();
   $optFields = $optCfg['arch']['options'];
-  $dash = new Dashboard();
+  $dash = new Dashboard($model->db);
   switch ($model->data['action']) {
     case 'insert':
       if (!$model->hasData($optFields['text'], true)) {

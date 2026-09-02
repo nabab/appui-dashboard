@@ -11,9 +11,9 @@ use bbn\Appui\Dashboard;
 
 $o = $ctrl->inc->options;
 if (!isset($ctrl->inc->perm)) {
-  $ctrl->addInc('perm', new Permissions($ctrl->getRoutes()));
+  $ctrl->addInc('perm', new Permissions($ctrl->db, $ctrl->getRoutes()));
 }
-$dashboard = new Dashboard('default');
+$dashboard = new Dashboard($ctrl->db, 'default');
 $widgets = $dashboard->getWidgets();
 foreach ($widgets as $w) {
   if (!empty($w['cache'])) {

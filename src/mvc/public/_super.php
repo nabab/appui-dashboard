@@ -9,7 +9,7 @@ if (!defined('APPUI_DASHBOARD_ROOT')) {
 }
 
 if (!isset($ctrl->inc->dashboard)) {
-  $ctrl->addInc('dashboard', new Dashboard());
+  $ctrl->addInc('dashboard', new Dashboard($ctrl->db));
 }
 
 if (!empty($ctrl->post['id_dashboard'])) {

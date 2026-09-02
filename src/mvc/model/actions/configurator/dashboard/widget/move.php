@@ -8,5 +8,5 @@ if (!$model->hasData('idWidget', true) || !\bbn\Str::isUid($model->data['idWidge
 if (!$model->hasData('num', true)) {
   throw new \Exception(_("The 'num' property is mandatory"));
 }
-$dash = new \bbn\Appui\Dashboard($model->data['idDashboard']);
+$dash = new \bbn\Appui\Dashboard($model->db, $model->data['idDashboard']);
 return ['success' => $dash->setOrderWidget($model->data['idWidget'], $model->data['num'])];

@@ -1,7 +1,7 @@
 <?php
 if ($model->hasData('id', true)
   && \bbn\Str::isUid($model->data['id'])
-  && ($dash = new \bbn\Appui\Dashboard($model->data['id']))
+  && ($dash = new \bbn\Appui\Dashboard($model->db, $model->data['id']))
   && ($info = $dash->get())
   && ($cfg = $model->inc->pref->getClassCfg())
   && ($data = $model->getModel($model->pluginUrl('appui-dashboard').'/data/configurator/widgets/tree'))
